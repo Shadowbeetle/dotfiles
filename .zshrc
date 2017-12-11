@@ -2,10 +2,12 @@
 # this zshrc is intended for mac use
 ################################################################################
 
+
 if [ -f ~/.username ]; then
   source ~/.username
 else
   echo "ERROR .username file not found, paths won't be right"
+  echo
 fi
 
 ### SHELL
