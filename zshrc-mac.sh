@@ -2,18 +2,10 @@
 # this zshrc is intended for mac use
 ################################################################################
 
-
-if [ -f ~/.username ]; then
-  source ~/.username
-else
-  echo "ERROR .username file not found, paths won't be right"
-  echo
-fi
-
 ### SHELL
 ## ZSH
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/$MY_USERNAME/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 ZSH_THEME="spaceship"
@@ -27,12 +19,12 @@ source $ZSH/oh-my-zsh.sh
 # https://github.com/junegunn/fzf#using-homebrew-or-linuxbrew
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-export PATH="/Library/Frameworks/Python.framework/Versions/3.5/bin:/Users/$MY_USERNAME/.nvm/versions/node/v4.4.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
+export PATH="/Library/Frameworks/Python.framework/Versions/3.5/bin:$HOME/.nvm/versions/node/v4.4.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
 
 # Tools
 # Frequency based directory completion
 # https://github.com/rupa/z
-. /Users/$MY_USERNAME/z.sh
+. $HOME/z.sh
 
 # colorized cat
 # http://pygments.org/docs/cmdline/
@@ -67,7 +59,7 @@ alias markright="open -a /Applications/MarkRight.app"
 ### DEVELOPMENT
 ## NODE.JS
 # NVM
-export NVM_DIR="/Users/$MY_USERNAME/.nvm"
+export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 nvm use 2> /dev/null
 
@@ -108,7 +100,7 @@ export PATH=$PATH:$GOPATH/bin
 
 ### DEVOPS
 ## GCE
-source "/Users/$MY_USERNAME/bin/google_cloud_sdk/path.zsh.inc"
+source "$HOME/bin/google_cloud_sdk/path.zsh.inc"
 
 ## KUBERNETES
 alias kuse-mini='kubectl config use-context minikube'
