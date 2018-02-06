@@ -38,7 +38,7 @@ export PATH="/Library/Frameworks/Python.framework/Versions/3.5/bin:/Users/$MY_US
 # http://pygments.org/docs/cmdline/
 alias c='pygmentize -O style=emacs -f console256 -g'
 
-# colorized cat
+# colorized ls
 # https://github.com/ogham/exa
 alias la="exa -abghl --git --color=automatic"
 
