@@ -1,0 +1,24 @@
+[user]
+	name = Shadowbeetle
+	email = tamas.kadlecsik@gmail.com
+[core]
+	editor = /Applications/Sublime\\ Text.app/Contents/SharedSupport/bin/subl -n -w
+	excludesfile = /Users/tamaskadlecsik/.gitignore_global
+	autocrlf = input
+[push]
+	default = current
+[pull]
+  rebase = true
+[alias]
+  co = checkout
+  c = commit -m
+  ca = commit -am
+  cn = commit -nm
+  can = commit -nam
+  amend = commit --amend --no-edit
+  st = status
+  br = branch
+  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+  type = cat-file -t
+  dump = cat-file -p
