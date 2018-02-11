@@ -94,6 +94,10 @@ alias tree-node="tree -I node_modules"
 ## KUBERNETES
 alias kuse-mini='kubectl config use-context minikube'
 source <(kubectl completion zsh)
+
+## AWS
+export PATH=~/.local/bin:$PATH
+
 ## VAGRANT
 export VAGRANT_HOME=/run/media/ext4/VirtualBox/
 export VAGRANT_DEFAULT_PROVIDER=virtualbox
