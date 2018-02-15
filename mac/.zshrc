@@ -19,7 +19,7 @@ source $ZSH/oh-my-zsh.sh
 # https://github.com/junegunn/fzf#using-homebrew-or-linuxbrew
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-export PATH="/Library/Frameworks/Python.framework/Versions/3.5/bin:$HOME/.nvm/versions/node/v4.4.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
+export PATH="/Library/Frameworks/Python.framework/Versions/3.5/bin:$HOME/.nvm/versions/node/v4.4.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 # Tools
 # Frequency based directory completion
