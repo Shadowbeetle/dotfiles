@@ -3,6 +3,15 @@
 ################################################################################
 
 ### SHELL
+## Secrets
+SECRETS="NPM_TOKEN\nGITHUB_TOKEN\nHOME_SSH_PORT\nHOME_SSH_HOST\nHOME_SSH_PORT_WIFI"
+if [ ! -f ~/.secrets ]; then
+ echo "~/.secrets does not exists, the following variables will not be available: "
+ printf "$SECRETS\n"
+else 
+  source ~/.secrets
+fi
+
 ## ZSH
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -45,6 +54,8 @@ function stringeq () {
 
 # ssh
 eval `ssh-agent`
+alias ssh-nazgul="ssh $HOME_SSH_HOST -p $HOME_SSH_PORT"
+alias ssh-nazgul-wifi="ssh $HOME_SSH_HOST -p $HOME_SSH_PORT_WIFI"
 
 # editor
 export EDITOR="atom -w"
@@ -52,9 +63,6 @@ alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 
 # Markdown
 alias markright="open -a /Applications/MarkRight.app"
-
-## Secrets
-[ -f ~/.secrets ] && source ~/.secrets
 
 ### DEVELOPMENT
 ## NODE.JS
