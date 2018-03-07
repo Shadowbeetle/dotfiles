@@ -109,6 +109,7 @@ source "$HOME/bin/google_cloud_sdk/path.zsh.inc"
 
 ## KUBERNETES
 alias kuse-mini='kubectl config use-context minikube'
+alias kc='kubectl'
 source <(kubectl completion zsh)
 
 ## MySQL
