@@ -90,7 +90,7 @@ alias npmlt="npml && npmt"
 # list directory tree without node_modules
 alias tree-node="tree -I node_modules"
 
-### DEVOPs
+### DEVOPS
 ## KUBERNETES
 alias kuse-mini='kubectl config use-context minikube'
 source <(kubectl completion zsh)
@@ -107,12 +107,17 @@ export VAGRANT_DEFAULT_PROVIDER=virtualbox
 # $HOME/.secrets
 
 ### HOME APPLICATIONS
-# jump instantly to applications directory
-alias apps='cd /usr/share/applications'
 alias viber='LD_LIBRARY_PATH=/opt/viber viber LD_PRELOAD=libcurl.so.3 /opt/viber/Viber'
 
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
+
+## Navigation
+# Jump to dotfiles
+# jump instantly to applications directory
+alias apps='cd /usr/share/applications'
+alias dotfiles='cd ~/dotfiles'
+
 
 ###ZSH AGIAN
 ## ZSH syntax highlighting

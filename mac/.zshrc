@@ -134,6 +134,11 @@ export PYTHONPATH=$SPARK_HOME/python/lib/py4j-0.10.1-src.zip:$PYTHONPATH
 alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 
+## Navigation
+# Jump to dotfiles
+alias dotfiles='cd ~/dotfiles'
+alias projects='cd ~/Projects'
+
 ## ZSH theme
 # Set Spaceship ZSH as a prompt
 autoload -U promptinit; promptinit
