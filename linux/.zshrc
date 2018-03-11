@@ -29,6 +29,9 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
+# quicly source .zshrc 
+alias sz='source ~/.zshrc'
+
 # Tools
 # fuzzy finder for shell history
 # https://github.com/junegunn/fzf
@@ -90,6 +93,12 @@ alias npmlt="npml && npmt"
 # list directory tree without node_modules
 alias tree-node="tree -I node_modules"
 
+## GO
+export GOPATH=$HOME/Prog
+export PATH=$GOPATH/bin:$PATH
+# Jump to gopath src
+alias jproj="cd $GOPATH/src"
+
 ### DEVOPS
 ## KUBERNETES
 alias kuse-mini='kubectl config use-context minikube'
@@ -115,8 +124,10 @@ alias pbpaste='xclip -selection clipboard -o'
 ## Navigation
 # Jump to dotfiles
 # jump instantly to applications directory
-alias apps='cd /usr/share/applications'
-alias dotfiles='cd ~/dotfiles'
+alias ju-apps='cd /usr/share/applications'
+alias ju-dot='cd ~/dotfiles'
+alias co-dot='code ~/dotfiles'
+alias ju-proj="cd $GOPATH/src"
 
 
 ###ZSH AGIAN

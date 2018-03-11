@@ -25,6 +25,9 @@ source $ZSH/oh-my-zsh.sh
 # https://github.com/junegunn/fzf#using-homebrew-or-linuxbrew
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# quicly source .zshrc 
+alias sz='source ~/.zshrc'
+
 export PATH="/Library/Frameworks/Python.framework/Versions/3.5/bin:$HOME/.nvm/versions/node/v4.4.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 # Tools
@@ -136,8 +139,9 @@ alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall F
 
 ## Navigation
 # Jump to dotfiles
-alias dotfiles='cd ~/dotfiles'
-alias projects='cd ~/Projects'
+alias ju-dot='cd ~/dotfiles'
+alias co-dot='cd ~/dotfiles'
+alias ju-proj="cd $GOPATH/src"
 
 ## ZSH theme
 # Set Spaceship ZSH as a prompt
