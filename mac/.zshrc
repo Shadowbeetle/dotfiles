@@ -115,6 +115,10 @@ alias kuse-mini='kubectl config use-context minikube'
 alias kc='kubectl'
 source <(kubectl completion zsh)
 
+## Docker
+alias up='docker-compose up'
+alias down='docker-compose down'
+
 ## MySQL
 export PATH=$PATH:/usr/local/mysql/bin
 

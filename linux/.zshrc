@@ -104,6 +104,10 @@ alias jproj="cd $GOPATH/src"
 alias kuse-mini='kubectl config use-context minikube'
 source <(kubectl completion zsh)
 
+## Docker
+alias up='docker-compose up'
+alias down='docker-compose down'
+
 ## AWS
 export PATH=~/.local/bin:$PATH
 
