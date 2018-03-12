@@ -103,7 +103,7 @@ export PATH=$PATH:/Library/TeX/texbin
 export GOROOT=$(go env GOROOT)
 export PATH=$PATH:$GOROOT/bin
 
-export GOPATH=$HOME/Projects/
+export GOPATH=$HOME/Projects
 export PATH=$PATH:$GOPATH/bin
 
 ### DEVOPS
@@ -154,7 +154,7 @@ alias ju-netb="cd $GOPATH/src/github.com/Netbiol"
 autoload -U promptinit; promptinit
 prompt spaceship
 
-SPACESHIP_PACKAGE_SHOW=false
+export SPACESHIP_PACKAGE_SHOW=false
 
 ## ZSH syntax highlighting
 # MUST BE AT THE END OF THE FILE!!!
