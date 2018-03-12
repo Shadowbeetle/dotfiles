@@ -103,7 +103,7 @@ export PATH=$PATH:/Library/TeX/texbin
 export GOROOT=$(go env GOROOT)
 export PATH=$PATH:$GOROOT/bin
 
-export GOPATH=$HOME/Projects/go
+export GOPATH=$HOME/Projects/
 export PATH=$PATH:$GOPATH/bin
 
 ### DEVOPS
