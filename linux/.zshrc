@@ -94,7 +94,7 @@ alias npmlt="npml && npmt"
 alias tree-node="tree -I node_modules"
 
 ## GO
-export GOPATH=$HOME/Prog
+export GOPATH=$HOME/Projects
 export PATH=$GOPATH/bin:$PATH
 # Jump to gopath src
 alias jproj="cd $GOPATH/src"
