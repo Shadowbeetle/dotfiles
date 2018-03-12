@@ -2,8 +2,8 @@
 	name = Shadowbeetle
 	email = tamas.kadlecsik@gmail.com
 [core]
-	editor = /Applications/Sublime\\ Text.app/Contents/SharedSupport/bin/subl -n -w
-	excludesfile = /Users/tamaskadlecsik/.gitignore_global
+	editor = subl -n -w
+	excludesfile = ~/.gitignore_global
 	autocrlf = input
 [push]
 	default = current

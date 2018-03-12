@@ -144,7 +144,7 @@ alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall F
 ## Navigation
 # Jump to dotfiles
 alias ju-dot='cd ~/dotfiles'
-alias co-dot='cd ~/dotfiles'
+alias co-dot='code ~/dotfiles'
 alias ju-proj="cd $GOPATH/src"
 
 ## ZSH theme
