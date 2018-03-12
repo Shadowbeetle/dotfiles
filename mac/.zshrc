@@ -142,10 +142,12 @@ alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall 
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 
 ## Navigation
-# Jump to dotfiles
 alias ju-dot='cd ~/dotfiles'
 alias co-dot='code ~/dotfiles'
 alias ju-proj="cd $GOPATH/src"
+alias ju-rs="cd $GOPATH/src/github.com/RisingStack"
+alias ju-shb="cd $GOPATH/src/github.com/Shadowbeetle"
+alias ju-netb="cd $GOPATH/src/github.com/Netbiol"
 
 ## ZSH theme
 # Set Spaceship ZSH as a prompt

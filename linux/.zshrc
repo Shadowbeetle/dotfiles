@@ -96,8 +96,6 @@ alias tree-node="tree -I node_modules"
 ## GO
 export GOPATH=$HOME/Projects
 export PATH=$GOPATH/bin:$PATH
-# Jump to gopath src
-alias jproj="cd $GOPATH/src"
 
 ### DEVOPS
 ## KUBERNETES
@@ -132,6 +130,9 @@ alias ju-apps='cd /usr/share/applications'
 alias ju-dot='cd ~/dotfiles'
 alias co-dot='code ~/dotfiles'
 alias ju-proj="cd $GOPATH/src"
+alias ju-rs="cd $GOPATH/src/github.com/RisingStack"
+alias ju-shb="cd $GOPATH/src/github.com/Shadowbeetle"
+alias ju-netb="cd $GOPATH/src/github.com/Netbiol"
 
 
 ###ZSH AGIAN
