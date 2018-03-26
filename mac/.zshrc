@@ -43,6 +43,9 @@ alias c='pygmentize -O style=emacs -f console256 -g'
 # https://github.com/ogham/exa
 alias la="exa -abghl --git --color=automatic"
 
+# case insensitive grep
+alias igrep="grep -i"
+
 # functions
 function killport() {
     lsof -i :$1 | tail -n 1 | awk '{ printf $2 }' | xargs kill -9
