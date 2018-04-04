@@ -62,7 +62,21 @@ function stringeq () {
 }
 
 # ssh
-eval `ssh-agent`
+## check if ssh agent is already running by looking for keys to be added
+ssh-add -l &>/dev/null
+if [ "$?" = 2 ]; then
+  # if not ssh-agent is running, try to load from file
+  test -r ~/.ssh-agent && \
+    eval "$(<~/.ssh-agent)" >/dev/null
+
+  # if there is no ~/.ssh-agent, start the ssh agent and save it to file
+  ssh-add -l &>/dev/null
+  if [ "$?" = 2 ]; then
+    (umask 066; ssh-agent > ~/.ssh-agent)
+    eval "$(<~/.ssh-agent)" >/dev/null
+    ssh-add
+  fi
+fi
 
 # editor
 export EDITOR="subl -nw"
@@ -103,7 +117,23 @@ export PATH=$GOPATH/bin:$PATH
 ### DEVOPS
 ## KUBERNETES
 alias kuse-mini='kubectl config use-context minikube'
-source <(kubectl completion zsh)
+# Check if 'kubectl' is a command in $PATH
+if [ $commands[kubectl] ]; then
+
+  # Placeholder 'kubectl' shell function:
+  # Will only be executed on the first call to 'kubectl'
+  kubectl() {
+
+    # Remove this function, subsequent calls will execute 'kubectl' directly
+    unfunction "$0"
+
+    # Load auto-completion
+    source <(kubectl completion zsh)
+
+    # Execute 'kubectl' binary
+    $0 "$@"
+  }
+fi
 
 ## Docker
 alias up='docker-compose up'
