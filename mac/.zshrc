@@ -129,6 +129,9 @@ export PATH=$PATH:$GOROOT/bin
 export GOPATH=$HOME/Projects
 export PATH=$PATH:$GOPATH/bin
 
+## Graphviz
+export GRAPHVIZ_DOT=/usr/local/Cellar/graphviz/2.40.1/bin/dot
+
 ### DEVOPS
 ## GCE
 source "$HOME/bin/google_cloud_sdk/path.zsh.inc"
