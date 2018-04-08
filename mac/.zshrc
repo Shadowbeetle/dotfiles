@@ -38,7 +38,7 @@ export PATH="/Library/Frameworks/Python.framework/Versions/3.5/bin:$HOME/.nvm/ve
 # autojump 
 # https://github.com/wting/autojump/issues/488
 # replace typeset -U to typeset -u in autojump.zsh
-[ /usr/share/autojump/autojump.zsh ] && source /usr/share/autojump/autojump.zsh
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
 # colorized cat
 # http://pygments.org/docs/cmdline/
