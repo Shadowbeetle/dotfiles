@@ -35,6 +35,11 @@ export PATH="/Library/Frameworks/Python.framework/Versions/3.5/bin:$HOME/.nvm/ve
 # https://github.com/rupa/z
 . $HOME/z.sh
 
+# autojump 
+# https://github.com/wting/autojump/issues/488
+# replace typeset -U to typeset -u in autojump.zsh
+[ /usr/share/autojump/autojump.zsh ] && source /usr/share/autojump/autojump.zsh
+
 # colorized cat
 # http://pygments.org/docs/cmdline/
 alias c='pygmentize -O style=emacs -f console256 -g'
