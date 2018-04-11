@@ -157,6 +157,9 @@ if [ $commands[kubectl] ]; then
   }
 fi
 
+# istio
+export PATH=$PATH:/Users/tamaskadlecsik/istio-0.4.0/bin/
+
 ## Docker
 alias up='docker-compose up'
 alias down='docker-compose down'
