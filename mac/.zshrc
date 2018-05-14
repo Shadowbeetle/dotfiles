@@ -81,7 +81,7 @@ alias ssh-nazgul="ssh $HOME_SSH_HOST -p $HOME_SSH_PORT"
 alias ssh-nazgul-wifi="ssh $HOME_SSH_HOST -p $HOME_SSH_PORT_WIFI"
 
 # editor
-export EDITOR="atom -w"
+export EDITOR="code -w"
 alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 
 # Markdown
