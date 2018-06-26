@@ -49,7 +49,7 @@ if [ -f $HOME/z/z.sh ]; then
   $HOME/z/z.sh
 else
   echo "install z.sh into $HOME/z/z.sh"
-  echo "run 'git clone git@github.com:rupa/z.git'" 
+  echo "run 'git clone git@github.com:rupa/z.git ~/z'" 
   echo
 fi
 
@@ -66,8 +66,13 @@ fi
 
 # colorized cat
 # http://pygments.org/docs/cmdline/
-alias c='pygmentize -O style=emacs -f console256 -g'
-
+if [ $commands[pygmentize] ]; then
+  alias c='pygmentize -o style=emacs -f console256 -g'
+else
+  echo "install pygmentize"
+  echo "run 'pacman -S python-pygments'"
+  echo
+fi
 # colorized ls
 # https://github.com/ogham/exa
 alias la="exa -abghl --git --color=automatic"
