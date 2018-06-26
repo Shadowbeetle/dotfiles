@@ -35,16 +35,34 @@ alias sz='source ~/.zshrc'
 # Tools
 # fuzzy finder for shell history
 # https://github.com/junegunn/fzf
-[ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
+if [ -f $HOME/.fzf.zsh ]; then
+  source $HOME/.fzf.zsh
+else
+  echo "install fzf into $HOME/.fzf.zs"
+  echo "run 'git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install'"
+  echo
+fi
 
 # Frequency based directory completion
 # https://github.com/rupa/z
-. $HOME/z/z.sh
+if [ -f $HOME/z/z.sh ]; then
+  $HOME/z/z.sh
+else
+  echo "install z.sh into $HOME/z/z.sh"
+  echo "run 'git clone git@github.com:rupa/z.git'" 
+  echo
+fi
 
 # autojump 
 # https://github.com/wting/autojump/issues/488
 # replace typeset -U to typeset -u in autojump.zsh
-[ /usr/share/autojump/autojump.zsh ] && source /usr/share/autojump/autojump.zsh
+if [ -f /usr/share/autojump/autojump.zsh ]; then
+  source /usr/share/autojump/autojump.zsh
+else
+   echo "install autojump"
+   echo "run 'sudo pacman -S autojump'"
+   echo
+fi
 
 # colorized cat
 # http://pygments.org/docs/cmdline/
@@ -84,7 +102,7 @@ if [ "$?" = 2 ]; then
 fi
 
 # editor
-export EDITOR="subl -nw"
+export EDITOR="code -w"
 
 ### DEVELOPMENT
 ## NODE.JS
@@ -177,4 +195,10 @@ alias ju-netb="cd $GOPATH/src/github.com/Netbiol"
 ## ZSH syntax highlighting
 # MUST BE AT THE END OF THE FILE!!!
 # https://github.com/zsh-users/zsh-syntax-highlighting
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if [ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+  source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+else
+  echo "install zsh-syntax-highlighting"
+  echo "run 'aurman -S zsh-syntax-highlighting'"
+  echo
+fi

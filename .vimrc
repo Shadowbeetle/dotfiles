@@ -5,7 +5,9 @@ set tabstop=2
 set shiftwidth=2
 " On pressing tab, insert 4 spaces
 set expandtab
+set number
 syntax on
+
 
 nmap <S-Enter> O<Esc>
 nmap <CR> o<Esc>
