@@ -49,7 +49,7 @@ if [ -f $HOME/z/z.sh ]; then
   $HOME/z/z.sh
 else
   echo "install z.sh into $HOME/z/z.sh"
-  echo "run 'git clone git@github.com:rupa/z.git ~/z'" 
+  echo "run 'git clone git@github.com:rupa/z.git ~/z && chmod +x $HOME/z/z.sh'" 
   echo
 fi
 
