@@ -67,7 +67,7 @@ fi
 # colorized cat
 # http://pygments.org/docs/cmdline/
 if [ $commands[pygmentize] ]; then
-  alias c='pygmentize -O style=emacs -f console256 -g z/z.sh'
+  alias c='pygmentize -O style=emacs -f console256 -g'
 else
   echo "install pygmentize"
   echo "run 'pacman -S pygmentize'"
