@@ -9,5 +9,6 @@
         "suppressShowKeyBindingsNotice": true
     },
     "gitlens.defaultDateStyle": "absolute",
-    "gitlens.defaultDateFormat": "YYYY MMM DD HH:mm"
+    "gitlens.defaultDateFormat": "YYYY MMM DD HH:mm",
+    "vim.useCtrlKeys": true
 }
