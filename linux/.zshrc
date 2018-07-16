@@ -145,6 +145,7 @@ export PATH=$GOPATH/bin:$PATH
 ### DEVOPS
 ## KUBERNETES
 alias kuse-mini='kubectl config use-context minikube'
+alias kc='kubectl'
 # Check if 'kubectl' is a command in $PATH
 if [ $commands[kubectl] ]; then
 
