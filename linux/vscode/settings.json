@@ -1,14 +1,18 @@
-{
-    "window.zoomLevel": 2,
-    "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?_",
-    "workbench.colorTheme": "Tomorrow Night Blue",
-    "editor.formatOnSave": true,
-    "git.autofetch": true,
-    "python.pythonPath": "/usr/bin/python",
-    "gitlens.advanced.messages": {
-        "suppressShowKeyBindingsNotice": true
-    },
-    "gitlens.defaultDateStyle": "absolute",
-    "gitlens.defaultDateFormat": "YYYY MMM DD HH:mm",
-    "vim.useCtrlKeys": true
-}
+    {
+        "window.zoomLevel": 0,
+        "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?_",
+        "workbench.colorTheme": "Tomorrow Night Blue",
+        "editor.formatOnSave": true,
+        "git.autofetch": true,
+        "python.pythonPath": "/usr/bin/python",
+        "gitlens.advanced.messages": {
+            "suppressShowKeyBindingsNotice": true
+        },
+        "gitlens.defaultDateStyle": "absolute",
+        "gitlens.defaultDateFormat": "YYYY MMM DD HH:mm",
+        "vim.useCtrlKeys": true,
+        "vim.handleKeys": {
+            "<C-d>": true,
+            "<C-S-g>": false
+        }
+    }
