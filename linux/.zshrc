@@ -180,10 +180,10 @@ export VAGRANT_DEFAULT_PROVIDER=virtualbox
 # $HOME/.secrets
 
 ### HOME APPLICATIONS
-alias viber='LD_LIBRARY_PATH=/opt/viber viber LD_PRELOAD=libcurl.so.3 /opt/viber/Viber'
-
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
+
+export XDG_DATA_DIRS="$XDG_DATA_DIRS:/var/lib/flatpak/exports/share/applications"
 
 ## Navigation
 # Jump to dotfiles

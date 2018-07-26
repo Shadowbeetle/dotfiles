@@ -1,3 +1,4 @@
 .secrets
 .trace
 .username
+**/albert/core.db
