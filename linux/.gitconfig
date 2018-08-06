@@ -2,13 +2,14 @@
 	email = tamas.kadlecsik@gmail.com
 	name = Shadowbeetle
 [core]
-	excludesfile = ~/.gitignore
+	excludesfile = ~/.gitignore-global
 	autocrlf = input
 [pull]
 	rebase = true
 [push]
 	default = current
 [alias]
+  aa = add --all
   co = checkout
   c = commit -m
   ca = commit -am
