@@ -195,7 +195,10 @@ alias ju-proj="cd $GOPATH/src"
 alias ju-rs="cd $GOPATH/src/github.com/RisingStack"
 alias ju-shb="cd $GOPATH/src/github.com/Shadowbeetle"
 alias ju-netb="cd $GOPATH/src/github.com/Netbiol"
-
+alias cnotes='code ~/Dropbox/Notes'
+alias notes='cnotes'
+alias vnotes='vim ~/Dropbox/Notes'
+alias gnotes='gvim ~/Dropbox/Notes'
 
 ###ZSH AGIAN
 ## ZSH syntax highlighting
