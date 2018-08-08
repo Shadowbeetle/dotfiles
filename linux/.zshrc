@@ -107,7 +107,7 @@ if [ "$?" = 2 ]; then
 fi
 
 # editor
-export EDITOR="code -w"
+export EDITOR="vim"
 
 ### DEVELOPMENT
 ## NODE.JS
