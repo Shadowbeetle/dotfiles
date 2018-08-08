@@ -188,17 +188,20 @@ export XDG_DATA_DIRS="$XDG_DATA_DIRS:/var/lib/flatpak/exports/share/applications
 ## Navigation
 # Jump to dotfiles
 # jump instantly to applications directory
-alias ju-apps='cd /usr/share/applications'
-alias ju-dot='cd ~/dotfiles'
-alias co-dot='code ~/dotfiles'
-alias ju-proj="cd $GOPATH/src"
-alias ju-rs="cd $GOPATH/src/github.com/RisingStack"
-alias ju-shb="cd $GOPATH/src/github.com/Shadowbeetle"
-alias ju-netb="cd $GOPATH/src/github.com/Netbiol"
+alias japps='cd /usr/share/applications'
+
+alias jdot='cd ~/dotfiles'
+alias cdot='code ~/dotfiles'
+alias vdot='jdot; vim ~/dotfiles'
+alias gdot='jdot;  gvim ~/dotfiles'
+
+alias jproj="cd $GOPATH/src"
+
+alias jnotes='cd ~/Dropbox/Notes'
 alias cnotes='code ~/Dropbox/Notes'
 alias notes='cnotes'
-alias vnotes='vim ~/Dropbox/Notes'
-alias gnotes='gvim ~/Dropbox/Notes'
+alias vnotes='jnotes; vim ~/Dropbox/Notes'
+alias gnotes='jnotes; gvim ~/Dropbox/Notes'
 
 ###ZSH AGIAN
 ## ZSH syntax highlighting
