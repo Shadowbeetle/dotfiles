@@ -13,6 +13,7 @@ set number              " turn line numbering on
 
 nmap <C-n> O<Esc>       " add newline above cursor when Enter is hit in Normal mode. does not work in terminal vim 
 nmap <CR> o<Esc>        " add newline below cursor when Enter is hit in Normal mode 
+inoremap hh <Esc>       " make `hh` work like ESC
 
 " Plugins
 " ===================
