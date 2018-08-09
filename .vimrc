@@ -10,6 +10,8 @@ set tabstop=2           " when indenting with '>', use 2 spaces width
 set shiftwidth=2        " On pressing tab, insert 2 spaces
 set expandtab           " use spaces instead of tabs
 set number              " turn line numbering on
+set undofile
+set undolevels=1000
 
 nmap <C-n> O<Esc>       " add newline above cursor when Enter is hit in Normal mode. does not work in terminal vim 
 nmap <CR> o<Esc>        " add newline below cursor when Enter is hit in Normal mode 
