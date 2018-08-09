@@ -24,10 +24,23 @@ Plug 'airblade/vim-gitgutter'       " Nice git lines at the side
 Plug 'tpope/vim-commentary'         " Commentary
 
 Plug 'rhysd/vim-grammarous', { 'on': 'GrammarousCheck' } " English spell check
+Plug 'easymotion/vim-easymotion'    " AceJump like movement
 
 call plug#end()
 
-" Setup YouCompleteMe
+" YouCompleteMe
 " ===================
 let g:ycm_global_ycm_extra_conf = '/usr/share/vim/vimfiles/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 let g:ycm_server_python_interpreter = '/usr/bin/python2'
+
+" EasyMotion
+" ===================
+" n-character search 
+map  / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
+
+" These `n` & `N` mappings are optional. You do not have to map `n` & `N` to EasyMotion.
+" Without these mappings, `n` & `N` works fine. (These mappings just provide
+" different highlight method and have some other features )
+map  n <Plug>(easymotion-next)
+map  N <Plug>(easymotion-prev)
