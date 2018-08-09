@@ -13,9 +13,8 @@ set number              " turn line numbering on
 set undofile
 set undolevels=1000
 
-nmap <C-n> O<Esc>       " add newline above cursor when Enter is hit in Normal mode. does not work in terminal vim 
-nmap <CR> o<Esc>        " add newline below cursor when Enter is hit in Normal mode 
-inoremap hh <Esc>       " make `hh` work like ESC
+nmap <C-n> O<Esc>0       " add newline above cursor when Enter is hit in Normal mode. does not work in terminal vim 
+nmap <CR> o<Esc>0k      " add newline below cursor when Enter is hit in Normal mode 
 
 " Plugins
 " ===================
