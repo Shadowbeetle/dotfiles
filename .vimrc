@@ -12,6 +12,7 @@ set expandtab           " use spaces instead of tabs
 set number              " turn line numbering on
 set undofile
 set undolevels=1000
+set autochdir           " change directory to currently edited file
 
 nmap <C-n> O<Esc>0       " add newline above cursor when Enter is hit in Normal mode. does not work in terminal vim 
 nmap <CR> o<Esc>0k      " add newline below cursor when Enter is hit in Normal mode 
@@ -21,10 +22,16 @@ nmap <CR> o<Esc>0k      " add newline below cursor when Enter is hit in Normal m
 call plug#begin('~/.vim/bundle')
 
 Plug 'airblade/vim-gitgutter'       " Nice git lines at the side
+
+Plug 'tpope/vim-surround'           " Surround
 Plug 'tpope/vim-commentary'         " Commentary
 
 Plug 'rhysd/vim-grammarous', { 'on': 'GrammarousCheck' } " English spell check
 Plug 'easymotion/vim-easymotion'    " AceJump like movement
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'pangloss/vim-javascript'      " JavaScript syntax highlighting
+Plug 'Raimondi/delimitMate'
 
 call plug#end()
 
@@ -44,3 +51,19 @@ omap / <Plug>(easymotion-tn)
 " different highlight method and have some other features )
 map  n <Plug>(easymotion-next)
 map  N <Plug>(easymotion-prev)
+
+" NERDTree
+" ==================
+nnoremap <silent> <leader>m :NERDTreeToggle<CR>
+autocmd vimenter * NERDTree " NERDTree automatically when vim starts up
+
+" start NERDTree automatically when vim starts up on opening a directory
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+
+" GitGutter
+" =========
+nmap ]h <Plug>GitGutterNextHunk
+nmap [h <Plug>GitGutterPrevHunk
+nmap <Leader>ha <Plug>GitGutterStageHunk
+nmap <Leader>hr <Plug>GitGutterUndoHunk
