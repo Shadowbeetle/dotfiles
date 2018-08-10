@@ -192,16 +192,16 @@ alias japps='cd /usr/share/applications'
 
 alias jdot='cd ~/dotfiles'
 alias cdot='code ~/dotfiles'
-alias vdot='jdot; vim ~/dotfiles'
-alias gdot='jdot;  gvim ~/dotfiles'
+alias vdot='vim ~/dotfiles'
+alias gdot='gvim ~/dotfiles'
 
 alias jproj="cd $GOPATH/src"
 
 alias jnotes='cd ~/Dropbox/Notes'
 alias cnotes='code ~/Dropbox/Notes'
 alias notes='cnotes'
-alias vnotes='jnotes; vim ~/Dropbox/Notes'
-alias gnotes='jnotes; gvim ~/Dropbox/Notes'
+alias vnotes='vim ~/Dropbox/Notes'
+alias gnotes='gvim ~/Dropbox/Notes'
 
 ###ZSH AGIAN
 ## ZSH syntax highlighting
