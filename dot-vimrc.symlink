@@ -20,19 +20,25 @@ nmap <CR> o<Esc>0k      " add newline below cursor when Enter is hit in Normal m
 " Plugins
 " ===================
 call plug#begin('~/.vim/bundle')
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 Plug 'airblade/vim-gitgutter'       " Nice git lines at the side
 
 Plug 'tpope/vim-surround'           " Surround
 Plug 'tpope/vim-commentary'         " Commentary
 
-Plug 'rhysd/vim-grammarous', { 'on': 'GrammarousCheck' } " English spell check
 Plug 'easymotion/vim-easymotion'    " AceJump like movement
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'pangloss/vim-javascript'      " JavaScript syntax highlighting
 Plug 'Raimondi/delimitMate'
 
+" For writing
+" ====================
+Plug 'junegunn/limelight.vim', { 'on': 'Limelight' }     " Focusing tool
+Plug 'junegunn/goyo.vim', { 'on': 'Limelight' }          " Focusing tool
+Plug 'rhysd/vim-grammarous', { 'on': 'GrammarousCheck' } " English spell check
 call plug#end()
 
 " YouCompleteMe
@@ -55,11 +61,6 @@ map  N <Plug>(easymotion-prev)
 " NERDTree
 " ==================
 nnoremap <silent> <leader>m :NERDTreeToggle<CR>
-autocmd vimenter * NERDTree " NERDTree automatically when vim starts up
-
-" start NERDTree automatically when vim starts up on opening a directory
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 
 " GitGutter
 " =========
@@ -67,3 +68,24 @@ nmap ]h <Plug>GitGutterNextHunk
 nmap [h <Plug>GitGutterPrevHunk
 nmap <Leader>ha <Plug>GitGutterStageHunk
 nmap <Leader>hr <Plug>GitGutterUndoHunk
+
+" Fzf
+" =======
+imap <c-x><c-l> <plug>(fzf-complete-line)
+imap <c-x><c-f> <plug>(fzf-complete-path)
+nmap <C-p> :GFiles<CR>
+let g:fzf_layout = { 'down': '20%' }
+
+" Limelight
+" =========
+" Color name (:help cterm-colors) or ANSI code
+let g:limelight_conceal_ctermfg = 'gray'
+let g:limelight_conceal_ctermfg = 240
+
+" Color name (:help gui-colors) or RGB color
+let g:limelight_conceal_guifg = 'DarkGray'
+let g:limelight_conceal_guifg = '#777777'
+
+let g:limelight_default_coefficient=0.7
+nmap <leader>f :Limelight!!<cr>
+
