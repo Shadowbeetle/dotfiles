@@ -10,7 +10,8 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
 fi
 
 CURR_DIR=$(pwd)
-PROJECTS_DIR=/home/nazgul/Projects/src/github.com/Shadowbeetle/dotfiles
+PROJECTS_DIR=~/Projects/src/github.com/Shadowbeetle/dotfiles
 cd ~
+
 ln -sf $PROJECTS_DIR/$OS/vscode/settings.json.symlink .vscode/settings.json
 cd $CURR_DIR
