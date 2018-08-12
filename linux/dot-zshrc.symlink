@@ -190,10 +190,10 @@ export XDG_DATA_DIRS="$XDG_DATA_DIRS:/var/lib/flatpak/exports/share/applications
 # jump instantly to applications directory
 alias japps='cd /usr/share/applications'
 
-alias jdot='cd ~/dotfiles'
-alias cdot='code ~/dotfiles'
-alias vdot='vim ~/dotfiles'
-alias gdot='gvim ~/dotfiles'
+alias jdot='cd ~/Projects/src/github.com/Shadowbeetle/dotfiles'
+alias cdot='code ~/Projects/src/github.com/Shadowbeetle/dotfiles'
+alias vdot='vim ~/Projects/src/github.com/Shadowbeetle/dotfiles'
+alias gdot='gvim ~/Projects/src/github.com/Shadowbeetle/dotfiles'
 
 alias jproj="cd $GOPATH/src"
 
