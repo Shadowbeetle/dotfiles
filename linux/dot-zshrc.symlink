@@ -195,6 +195,8 @@ alias cdot='code ~/Projects/src/github.com/Shadowbeetle/dotfiles'
 alias vdot='vim ~/Projects/src/github.com/Shadowbeetle/dotfiles'
 alias gdot='gvim ~/Projects/src/github.com/Shadowbeetle/dotfiles'
 
+alias vv='vim ~/.vimrc'
+
 alias jproj="cd $GOPATH/src"
 
 alias jnotes='cd ~/Dropbox/Notes'
