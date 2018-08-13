@@ -52,14 +52,14 @@ let g:ycm_server_python_interpreter = '/usr/bin/python2'
 " EasyMotion
 " ===================
 " n-character search 
-noremap  / <Plug>(easymotion-sn)
-onoremap / <Plug>(easymotion-tn)
+map  / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
 
 " These `n` & `N` mappings are optional. You do not have to map `n` & `N` to EasyMotion.
 " Without these mappings, `n` & `N` works fine. (These mappings just provide
 " different highlight method and have some other features )
-noremap  n <Plug>(easymotion-next)
-noremap  N <Plug>(easymotion-prev)
+map  n <Plug>(easymotion-next)
+map  N <Plug>(easymotion-prev)
 
 " NERDTree
 " ==================
@@ -67,16 +67,16 @@ nnoremap <silent> <leader>m :NERDTreeToggle<CR>
 
 " GitGutter
 " =========
-nnoremap ]h <Plug>GitGutterNextHunk
-nnoremap [h <Plug>GitGutterPrevHunk
-nnoremap <Leader>ha <Plug>GitGutterStageHunk
-nnoremap <Leader>hr <Plug>GitGutterUndoHunk
+nmap ]h <Plug>GitGutterNextHunk
+nmap [h <Plug>GitGutterPrevHunk
+nmap <Leader>ha <Plug>GitGutterStageHunk
+nmap <Leader>hr <Plug>GitGutterUndoHunk
 
 " Fzf
 " =======
-inoremap <c-x><c-l> <plug>(fzf-complete-line)
-inoremap <c-x><c-f> <plug>(fzf-complete-path)
-nnoremap <C-p> :GFiles<CR>
+imap <c-x><c-l> <plug>(fzf-complete-line)
+imap <c-x><c-f> <plug>(fzf-complete-path)
+nmap <C-p> :GFiles<CR>
 let g:fzf_layout = { 'down': '20%' }
 
 " Limelight
