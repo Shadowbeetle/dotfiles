@@ -180,6 +180,7 @@ export VAGRANT_DEFAULT_PROVIDER=virtualbox
 # $HOME/.secrets
 
 ### HOME APPLICATIONS
+eval $(thefuck --alias)
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 
