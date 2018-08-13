@@ -20,6 +20,8 @@ nnoremap <CR> o<Esc>0k      " add newline below cursor when Enter is hit in Norm
 nnoremap <leader>ev :vsplit $MYVIMRC<cr> " edit vimrc in a different split screen
 nnoremap <leader>sv :source $MYVIMRC<cr> " source vimrc
 
+autocmd FileType markdown :iabbrev <buffer> --- —
+
 " Plugins
 " ===================
 call plug#begin('~/.vim/bundle')
