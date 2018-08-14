@@ -4,6 +4,6 @@
 
 CURR_DIR=$(pwd)
 PROJECTS_DIR=~/Projects/src/github.com/Shadowbeetle/dotfiles
-cd ~/.config
-ln -sf $PROJECTS_DIR/linux/dot-config/albert.symlink albert
+cd ~/.config/albert
+ln -sf $PROJECTS_DIR/linux/dot-config/albert/albert.conf.symlink albert.conf
 cd $CURR_DIR
