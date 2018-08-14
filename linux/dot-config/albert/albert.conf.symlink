@@ -27,7 +27,7 @@ enabled=true
 
 [org.albert.extension.python]
 enabled=true
-enabled_modules=ArchWiki, AUR, CoinMarketCap, Currency, DateTime, GoogleTranslate, Kill, MultiGoogleTranslate, Pacman, Timer, Wikipedia
+enabled_modules=ArchWiki, AUR, CoinMarketCap, Currency, DateTime, GoogleTranslate, Kill, MultiGoogleTranslate, Pacman, Timer, Wikipedia, CopyQ
 
 [org.albert.extension.snippets]
 enabled=true
@@ -70,4 +70,4 @@ hideOnClose=false
 hideOnFocusLoss=true
 itemCount=5
 showCentered=true
-theme=Bright
+theme=Dark
