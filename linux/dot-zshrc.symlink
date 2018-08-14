@@ -198,6 +198,7 @@ alias vdot='vim ~/Projects/src/github.com/Shadowbeetle/dotfiles'
 alias gdot='gvim ~/Projects/src/github.com/Shadowbeetle/dotfiles'
 
 alias vv='vim ~/.vimrc'
+alias vz='vim ~/.zshrc'
 
 alias jproj="cd $GOPATH/src"
 
