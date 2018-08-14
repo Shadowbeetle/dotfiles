@@ -9,6 +9,10 @@ syntax on
 set tabstop=2           " when indenting with '>', use 2 spaces width
 set shiftwidth=2        " On pressing tab, insert 2 spaces
 set expandtab           " use spaces instead of tabs
+set expandtab
+set autoindent
+set smartindent
+set smarttab
 set number              " turn line numbering on
 set undofile
 set undolevels=1000
@@ -51,6 +55,12 @@ call plug#end()
 " ===================
 let g:ycm_global_ycm_extra_conf = '/usr/share/vim/vimfiles/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 let g:ycm_server_python_interpreter = '/usr/bin/python2'
+let g:ycm_key_list_select_completion = ['<Down>']
+let g:ycm_key_list_previous_completion = ['<Up>']
+let g:ycm_key_list_stop_completion = ['<C-y>', '<TAB>']
+
+nnoremap gd :YcmCompleter GoToDefinition<CR>
+nnoremap gr :YcmCompleter GoToReferences<CR> 
 
 " EasyMotion
 " ===================
