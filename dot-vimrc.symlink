@@ -17,15 +17,19 @@ set number              " turn line numbering on
 set undofile
 set undolevels=1000
 set autochdir           " change directory to currently edited file
+set list                " show non printable characters
+set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,space:·
 
-nnoremap <C-n> O<Esc>0       " add newline above cursor when Enter is hit in Normal mode. does not work in terminal vim 
-nnoremap <CR> o<Esc>0k      " add newline below cursor when Enter is hit in Normal mode 
+nnoremap <C-n> O<Esc>0  " add newline above cursor when Enter is hit in Normal mode. does not work in terminal vim 
+nnoremap <CR> o<Esc>0k  " add newline below cursor when Enter is hit in Normal mode 
 
 nnoremap <leader>ev :vsplit $MYVIMRC<cr> " edit vimrc in a different split screen
 nnoremap <leader>sv :source $MYVIMRC<cr> " source vimrc
 
 autocmd FileType markdown :iabbrev <buffer> --- — " create emdash for when typing --- in markdown
-autocmd FileType javascript :colo slate " use slate colorscheme for javascript
+autocmd FileType javascript :colo slate           " use slate colorscheme for javascript
+
+
 
 " Plugins
 " ===================
@@ -43,6 +47,11 @@ Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'pangloss/vim-javascript'      " JavaScript syntax highlighting
 Plug 'Raimondi/delimitMate'
+
+" Colorschemes
+" =====================
+
+Plug 'dracula/vim', { 'as': 'dracula' }
 
 " For writing
 " ====================
@@ -105,4 +114,7 @@ let g:limelight_conceal_guifg = '#777777'
 let g:limelight_default_coefficient=0.7
 nnoremap <leader>f :Limelight!!<cr>
 
+" Dracula
+" =======
 
+color dracula
