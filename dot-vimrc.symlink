@@ -27,11 +27,15 @@ nnoremap <CR> o<Esc>0k  " add newline below cursor when Enter is hit in Normal m
 nnoremap <leader>ev :vsplit $MYVIMRC<cr> " edit vimrc in a different split screen
 nnoremap <leader>sv :source $MYVIMRC<cr> " source vimrc
 
-autocmd FileType markdown :iabbrev <buffer> --- — " create emdash for when typing --- in markdown
-autocmd FileType javascript :colo slate           " use slate colorscheme for javascript
+autocmd FileType markdown :iabbrev <buffer> --- — 
 
-
-
+" Only show cursorcolumn in the current window and in normal mode.
+augroup cline
+  au!
+  au WinLeave * set nocursorcolumn
+  au WinEnter * set cursorcolumn
+augroup END
+"
 " Plugins
 " ===================
 call plug#begin('~/.vim/bundle')
@@ -48,6 +52,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'pangloss/vim-javascript'      " JavaScript syntax highlighting
 Plug 'Raimondi/delimitMate'
+Plug 'vim-airline/vim-airline'      " vim powerline
+Plug 'vim-airline/vim-airline-themes'
 
 " Colorschemes
 " =====================
@@ -119,3 +125,7 @@ nnoremap <leader>f :Limelight!!<cr>
 " =======
 
 color dracula
+
+" Airline
+" =======
+let g:airline_powerline_fonts=0
