@@ -24,10 +24,19 @@ set cursorcolumn        " highlight current column
 nnoremap <C-n> O<Esc>0  " add newline above cursor when Enter is hit in Normal mode. does not work in terminal vim 
 nnoremap <CR> o<Esc>0k  " add newline below cursor when Enter is hit in Normal mode 
 
+nnoremap <leader>df :w !diff % -<cr>
+
 nnoremap <leader>ev :vsplit $MYVIMRC<cr> " edit vimrc in a different split screen
 nnoremap <leader>sv :source $MYVIMRC<cr> " source vimrc
 
-autocmd FileType markdown :iabbrev <buffer> --- — 
+augroup markdown
+  au!
+  au FileType markdown :iabbrev <buffer> --- — 
+  au FileType markdown :inoremap <buffer> ** ****<left><left>
+  au FileType markdown :inoremap <buffer> _ __<left>
+  au FileType markdown :inoremap <buffer> <C-b> ****<left><left>
+  au FileType markdown :inoremap <buffer> <C-i> __<left>
+augroup END
 
 " Only show cursorcolumn in the current window and in normal mode.
 augroup cline
@@ -46,6 +55,7 @@ Plug 'airblade/vim-gitgutter'       " Nice git lines at the side
 
 Plug 'tpope/vim-surround'           " Surround
 Plug 'tpope/vim-commentary'         " Commentary
+Plug 'tpope/vim-markdown', { 'for': 'markdown' }
 
 Plug 'easymotion/vim-easymotion'    " AceJump like movement
 Plug 'scrooloose/nerdtree'
