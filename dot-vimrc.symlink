@@ -32,8 +32,8 @@ autocmd FileType markdown :iabbrev <buffer> --- —
 " Only show cursorcolumn in the current window and in normal mode.
 augroup cline
   au!
-  au WinLeave * set nocursorcolumn
-  au WinEnter * set cursorcolumn
+  au InsertEnter * set nocursorcolumn
+  au InsertLeave * set cursorcolumn
 augroup END
 "
 " Plugins
