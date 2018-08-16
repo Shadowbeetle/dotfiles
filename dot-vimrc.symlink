@@ -31,11 +31,12 @@ nnoremap <leader>sv :source $MYVIMRC<cr> " source vimrc
 
 augroup markdown
   au!
-  au FileType markdown :iabbrev <buffer> --- — 
+  au FileType markdown :iabbrev <buffer> --- —
   au FileType markdown :inoremap <buffer> ** ****<left><left>
   au FileType markdown :inoremap <buffer> _ __<left>
   au FileType markdown :inoremap <buffer> <C-b> ****<left><left>
-  au FileType markdown :inoremap <buffer> <C-i> __<left>
+  au FileType markdown :inoremap <buffer> <C-l> __<left>
+  au FileType markdown :set list!
 augroup END
 
 " Only show cursorcolumn in the current window and in normal mode.
