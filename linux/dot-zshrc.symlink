@@ -28,6 +28,7 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(git)
 plugins=(zsh-autosuggestions)
 SPACESHIP_BATTERY_THRESHOLD=99
+SPACESHIP_TIME_SHOW=true
 source $ZSH/oh-my-zsh.sh
 
 # quicly source .zshrc 
