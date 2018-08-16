@@ -22,7 +22,7 @@ set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,space:·
 set cursorcolumn        " highlight current column
 
 nnoremap <C-n> O<Esc>0  " add newline above cursor when Enter is hit in Normal mode. does not work in terminal vim 
-nnoremap <CR> o<Esc>0k  " add newline below cursor when Enter is hit in Normal mode 
+nnoremap <C-S-n> o<Esc>0k  " add newline below cursor when Enter is hit in Normal mode 
 
 nnoremap <leader>df :w !diff % -<cr>
 
