@@ -205,8 +205,8 @@ alias jproj="cd $GOPATH/src"
 
 alias jnotes='cd ~/Dropbox/Notes'
 alias cnotes='code ~/Dropbox/Notes'
-alias notes='cnotes'
 alias vnotes='vim ~/Dropbox/Notes'
+alias notes='cnotes'
 alias gnotes='gvim ~/Dropbox/Notes'
 
 ###ZSH AGIAN
