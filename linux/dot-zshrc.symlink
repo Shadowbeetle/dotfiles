@@ -19,17 +19,21 @@ fi
 ## ZSH
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
+source ~/.antigen/antigen.zsh
 
-# Set name of the theme to load.
-ZSH_THEME="spaceship"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
-plugins=(git)
-plugins=(zsh-autosuggestions)
+antigen use oh-my-zsh
+antigen bundle git
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-completions
+antigen bundle felixr/docker-zsh-completion
+
+antigen theme https://github.com/denysdovhan/spaceship-prompt spaceship
+antigen apply
+
 SPACESHIP_BATTERY_THRESHOLD=99
 SPACESHIP_TIME_SHOW=true
-source $ZSH/oh-my-zsh.sh
 
 # quicly source .zshrc 
 alias sz='source ~/.zshrc'
@@ -85,10 +89,6 @@ alias igrep="grep -i"
 # functions
 function killport() {
     fuser -k $1/tcp
-}
-
-function stringeq () {
-    python -c "print '$1' == '$2'"
 }
 
 # ssh
@@ -213,10 +213,10 @@ alias gnotes='gvim ~/Dropbox/Notes'
 ## ZSH syntax highlighting
 # MUST BE AT THE END OF THE FILE!!!
 # https://github.com/zsh-users/zsh-syntax-highlighting
-if [ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
-  source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-else
-  echo "install zsh-syntax-highlighting"
-  echo "run 'aurman -S zsh-syntax-highlighting'"
-  echo
-fi
+# if [ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+#   source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# else
+#   echo "install zsh-syntax-highlighting"
+#   echo "run 'aurman -S zsh-syntax-highlighting'"
+#   echo
+# fi
