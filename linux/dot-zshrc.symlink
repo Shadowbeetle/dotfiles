@@ -23,11 +23,19 @@ export ZSH=$HOME/.oh-my-zsh
 source ~/.zplug/init.zsh
 
 zplug plugins/git, from:oh-my-zsh
+zplug plugins/copybuffer, from:oh-my-zsh
+zplug plugins/gitignore, from:oh-my-zsh
+zplug plugins/nvm, from:oh-my-zsh
+zplug plugins/dirhistory, from:oh-my-zsh
 zplug denysdovhan/spaceship-prompt, use:spaceship.zsh, from:github, as:theme
 zplug zsh-users/zsh-autosuggestions
 zplug zsh-users/zsh-syntax-highlighting
 zplug zsh-users/zsh-completions
 zplug felixr/docker-zsh-completion
+zplug vifon/deer, use:deer
+# setup deer
+zle -N deer
+bindkey '\ek' deer
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
@@ -60,16 +68,6 @@ else
   echo
 fi
 
-# Frequency based directory completion
-# https://github.com/rupa/z
-if [ -f $HOME/z/z.sh ]; then
-  $HOME/z/z.sh
-else
-  echo "install z.sh into $HOME/z/z.sh"
-  echo "run 'git clone git@github.com:rupa/z.git ~/z && chmod +x $HOME/z/z.sh'" 
-  echo
-fi
-
 # autojump 
 # https://github.com/wting/autojump/issues/488
 # replace typeset -U to typeset -u in autojump.zsh
@@ -90,9 +88,6 @@ else
   echo "run 'pacman -S pygmentize'"
   echo
 fi
-# colorized ls
-# https://github.com/ogham/exa
-alias la="exa -abghl --git --color=automatic"
 
 # case insensitive grep
 alias igrep="grep -i"
@@ -202,9 +197,9 @@ export XDG_DATA_DIRS="$XDG_DATA_DIRS:/var/lib/flatpak/exports/share/applications
 ## Navigation
 # Jump to dotfiles
 # jump instantly to applications directory
-alias japps='cd /usr/share/applications'
+alias apps='cd /usr/share/applications'
 
-alias jdot='cd ~/Projects/src/github.com/Shadowbeetle/dotfiles'
+alias dot='cd ~/Projects/src/github.com/Shadowbeetle/dotfiles'
 alias cdot='code ~/Projects/src/github.com/Shadowbeetle/dotfiles'
 alias vdot='vim ~/Projects/src/github.com/Shadowbeetle/dotfiles'
 alias gdot='gvim ~/Projects/src/github.com/Shadowbeetle/dotfiles'
@@ -212,9 +207,9 @@ alias gdot='gvim ~/Projects/src/github.com/Shadowbeetle/dotfiles'
 alias vv='vim ~/.vimrc'
 alias vz='vim ~/.zshrc'
 
-alias jproj="cd $GOPATH/src"
+alias proj="cd $GOPATH/src"
 
-alias jnotes='cd ~/Dropbox/Notes'
+alias notes='cd ~/Dropbox/Notes'
 alias cnotes='code ~/Dropbox/Notes'
 alias vnotes='vim ~/Dropbox/Notes'
 alias notes='cnotes'
