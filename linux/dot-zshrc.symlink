@@ -125,6 +125,8 @@ fi
 # editor
 export EDITOR="vim"
 
+export TERM="terminator"
+
 ### DEVELOPMENT
 ## NODE.JS
 # NVM
