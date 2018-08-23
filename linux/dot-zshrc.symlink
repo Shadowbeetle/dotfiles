@@ -68,6 +68,14 @@ else
   echo
 fi
 
+if [ commands[ranger] ]; then
+  alias ra='ranger'
+else 
+  echo "install ranger"
+  echo "run 'sudo pacman -S ranger'"
+  echo
+fi
+
 # autojump 
 # https://github.com/wting/autojump/issues/488
 # replace typeset -U to typeset -u in autojump.zsh
