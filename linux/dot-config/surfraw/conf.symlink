@@ -36,7 +36,7 @@ def   SURFRAW_text_browser
 
 # name/path of browser executable
 # e.g mozilla, netscape etc. Default to $BROWSER if no listed ones found
-def   SURFRAW_graphical_browser	/usr/bin/firefox
+SURFRAW_graphical_browser=/usr/bin/firefox
 
 # text browser arguments, or "none"
 def   SURFRAW_text_browser_args	none
