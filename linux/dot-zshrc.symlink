@@ -33,6 +33,10 @@ zplug zsh-users/zsh-syntax-highlighting
 zplug zsh-users/zsh-completions
 zplug felixr/docker-zsh-completion
 zplug vifon/deer, use:deer
+zplug djui/alias-tips
+zplug "hlissner/zsh-autopair", defer:2
+zplug Tarrasch/zsh-bd
+zplug arzzen/calc.plugin.zsh 
 # setup deer
 zle -N deer
 bindkey '\ek' deer
@@ -68,6 +72,16 @@ else
   echo
 fi
 
+# currency converter
+if [ $(which cash) ]; then
+  alias cs='cash'
+else 
+  echo "install cash"
+  echo "run 'npm i -g cash-cli'"
+  echo
+fi
+
+# command line file manager
 if [ commands[ranger] ]; then
   alias ra='ranger'
 else 
@@ -223,14 +237,3 @@ alias vnotes='vim ~/Dropbox/Notes'
 alias notes='cnotes'
 alias gnotes='gvim ~/Dropbox/Notes'
 
-###ZSH AGIAN
-## ZSH syntax highlighting
-# MUST BE AT THE END OF THE FILE!!!
-# https://github.com/zsh-users/zsh-syntax-highlighting
-# if [ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
-#   source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# else
-#   echo "install zsh-syntax-highlighting"
-#   echo "run 'aurman -S zsh-syntax-highlighting'"
-#   echo
-# fi
