@@ -81,6 +81,22 @@ else
   echo
 fi
 
+function eth () {
+  cash $1 eur huf 
+}
+
+function hte () {
+  cash $1 huf eur
+}
+
+function uth () {
+  cash $1 usd huf 
+}
+
+function htu () {
+  cash $1 huf usd
+}
+
 # command line file manager
 if [ commands[ranger] ]; then
   alias ra='ranger'
