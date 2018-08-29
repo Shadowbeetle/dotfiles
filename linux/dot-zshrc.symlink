@@ -230,6 +230,9 @@ eval $(thefuck --alias)
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 
+alias isod='date +%Y-%m-%d'
+alias cisod="isod | pbcopy"
+
 export XDG_DATA_DIRS="$XDG_DATA_DIRS:/var/lib/flatpak/exports/share/applications"
 
 ## Navigation
