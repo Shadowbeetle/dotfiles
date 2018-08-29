@@ -250,6 +250,5 @@ alias proj="cd $GOPATH/src"
 alias notes='cd ~/Dropbox/Notes'
 alias cnotes='code ~/Dropbox/Notes'
 alias vnotes='vim ~/Dropbox/Notes'
-alias notes='cnotes'
 alias gnotes='gvim ~/Dropbox/Notes'
 
