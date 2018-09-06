@@ -36,7 +36,8 @@ zplug vifon/deer, use:deer
 zplug djui/alias-tips
 zplug "hlissner/zsh-autopair", defer:2
 zplug Tarrasch/zsh-bd
-zplug arzzen/calc.plugin.zsh 
+zplug arzzen/calc.plugin.zsh
+
 # setup deer
 zle -N deer
 bindkey '\ek' deer
@@ -73,7 +74,7 @@ else
 fi
 
 # currency converter
-if [ $(which cash) ]; then
+if $(which cash); then
   alias cs='cash'
 else 
   echo "install cash"
@@ -255,3 +256,5 @@ alias cnotes='code ~/Dropbox/Notes'
 alias vnotes='vim ~/Dropbox/Notes'
 alias gnotes='gvim ~/Dropbox/Notes'
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
