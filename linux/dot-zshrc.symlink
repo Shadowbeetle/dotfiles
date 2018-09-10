@@ -249,7 +249,7 @@ alias gdot='gvim ~/Projects/src/github.com/Shadowbeetle/dotfiles'
 alias vv='vim ~/.vimrc'
 alias vz='vim ~/.zshrc'
 
-alias proj="cd $GOPATH/src"
+hash -d -- projects="$GOPATH/src"
 
 hash -d -- notes="$HOME/Dropbox/Notes/"
 alias cnotes='code ~/Dropbox/Notes'
