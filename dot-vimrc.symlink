@@ -65,7 +65,7 @@ Plug 'pangloss/vim-javascript'      " JavaScript syntax highlighting
 Plug 'Raimondi/delimitMate'
 Plug 'vim-airline/vim-airline'      " vim powerline
 Plug 'vim-airline/vim-airline-themes'
-
+Plug 'vim-scripts/vim-auto-save'
 " Colorschemes
 " =====================
 
@@ -141,3 +141,8 @@ color dracula
 " Airline
 " =======
 let g:airline_powerline_fonts=0
+
+" Autosave
+" ========
+
+let g:auto_save = 1 
