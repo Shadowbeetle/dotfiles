@@ -1,4 +1,5 @@
 " Syntax highlighting
+"
 " ===================
 filetype on
 filetype plugin on
@@ -27,6 +28,11 @@ nnoremap <leader>df :w !diff % -<cr>
 
 nnoremap <leader>ev :vsplit $MYVIMRC<cr> " edit vimrc in a different split screen
 nnoremap <leader>sv :source $MYVIMRC<cr> " source vimrc
+
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 augroup markdown
   au!
@@ -84,10 +90,11 @@ let g:ycm_server_python_interpreter = '/usr/bin/python2'
 let g:ycm_key_list_select_completion = ['<Down>']
 let g:ycm_key_list_previous_completion = ['<Up>']
 let g:ycm_key_list_stop_completion = ['<C-y>', '<TAB>']
-
+ 
 nnoremap gd :YcmCompleter GoToDefinition<CR>
 nnoremap gr :YcmCompleter GoToReferences<CR> 
 
+let g:ycm_server_python_interpreter = '/usr/bin/python'
 " EasyMotion
 " ===================
 " n-character search 
@@ -145,3 +152,4 @@ let g:airline_powerline_fonts=0
 " ========
 
 let g:auto_save = 1 
+
