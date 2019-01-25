@@ -117,8 +117,8 @@ gesture swipe right	xdotool key alt+Left
 ###############################################################################
 
 # GNOME SHELL open/close overview (works for GNOME on Xorg only)
-gesture pinch out	xdotool key ctrl+plus
-gesture pinch in	xdotool key ctrl+minus
+# gesture pinch out	xdotool key ctrl+plus
+# gesture pinch in	xdotool key ctrl+minus
 
 # KDE Plasma open/close overview
 # gesture pinch in	xdotool key ctrl+F9
