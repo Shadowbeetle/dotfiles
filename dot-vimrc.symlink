@@ -34,6 +34,8 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+nnoremap yyy :%y+<cr> " copy whole file to X clipboard
+
 augroup markdown
   au!
   au FileType markdown :iabbrev <buffer> --- —
