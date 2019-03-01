@@ -162,7 +162,8 @@ alias tree-node="tree -I node_modules"
 
 ## GO
 export GOPATH=$HOME/Projects
-export PATH=$GOPATH/bin:$PATH
+export GOROOT=/usr/lib/go/bin
+export PATH=$GOPATH/bin:$GOROOT:$PATH
 
 ### DEVOPS
 ## KUBERNETES
