@@ -73,7 +73,9 @@ Plug 'Raimondi/delimitMate'
 Plug 'vim-airline/vim-airline'      " vim powerline
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/vim-auto-save'
-" Colorschemes
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
+"Colorschemes
 " =====================
 
 Plug 'dracula/vim', { 'as': 'dracula' }
@@ -153,5 +155,11 @@ let g:airline_powerline_fonts=0
 " Autosave
 " ========
 
-let g:auto_save = 1 
+let g:auto_save = 1
+let g:auto_save_in_insert_mode = 0
+
+" vim-go
+" ======
+
+let g:go_fmt_command = "goimports"
 
