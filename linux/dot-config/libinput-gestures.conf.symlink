@@ -48,7 +48,6 @@
 
 # Move to next workspace (works for GNOME/KDE/etc on Wayland and Xorg)
 # gesture swipe up	_internal ws_up
-gesture swipe up xdotool key super+s
 
 # NOTE ABOUT FINGER COUNT:
 # The above command will configure this command for all fingers (i.e. 3
