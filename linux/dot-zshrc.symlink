@@ -164,7 +164,9 @@ alias tree-node="tree -I node_modules"
 export GOPATH=$HOME/Projects
 export GOROOT=$HOME/go
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
-export GO111MODULE=on
+export GO111MODULE=auto
+
+alias goc="go test -coverprofile cover.out && go tool cover -html=cover.out -o cover.html && firefox cover.html"
 
 ### DEVOPS
 ## KUBERNETES
