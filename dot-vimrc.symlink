@@ -17,12 +17,13 @@ set number              " turn line numbering on
 set undofile
 set undolevels=1000
 set autochdir           " change directory to currently edited file
+set encoding=utf-8
 set list                " show non printable characters
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,space:·
 set cursorcolumn        " highlight current column
-
-nnoremap <C-n> O<Esc>0
-nnoremap <C-m> o<Esc>0k
+set cursorline
+set splitbelow
+set splitright
 
 nnoremap <leader>df :w !diff % -<cr>
 
@@ -36,21 +37,32 @@ nnoremap <C-H> <C-W><C-H>
 
 nnoremap yyy :%y+<cr> " copy whole file to X clipboard
 
+:set foldmethod=indent
+augroup remember_folds
+  autocmd!
+  autocmd BufWinLeave * mkview
+  autocmd BufWinEnter * silent! loadview
+augroup END
+
+
 augroup markdown
   au!
-  au FileType markdown :iabbrev <buffer> --- —
+  au FileType markdown :iabbrev <buffer> ---- —
   au FileType markdown :inoremap <buffer> ** ****<left><left>
   au FileType markdown :inoremap <buffer> _ __<left>
   au FileType markdown :inoremap <buffer> <C-b> ****<left><left>
   au FileType markdown :inoremap <buffer> <C-l> __<left>
   au FileType markdown :set list!
+  au FileType markdown :setlocal foldmethod=manual
 augroup END
 
 " Only show cursorcolumn in the current window and in normal mode.
 augroup cline
   au!
   au InsertEnter * set nocursorcolumn
+  au InsertEnter * set nocursorline
   au InsertLeave * set cursorcolumn
+  au InsertLeave * set cursorline
 augroup END
 "
 " Plugins
@@ -74,6 +86,7 @@ Plug 'vim-airline/vim-airline'      " vim powerline
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/vim-auto-save'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'cespare/vim-toml'
 
 "Colorschemes
 " =====================
@@ -162,4 +175,20 @@ let g:auto_save_in_insert_mode = 0
 " ======
 
 let g:go_fmt_command = "goimports"
+let g:go_fmt_experimental = 1
+
+" debug
+nnoremap <leader>gdb :GoDebugBreakpoint<cr>
+nnoremap <leader>gdc :GoDebugContinue<cr>
+nnoremap <leader>gds :GoDebugStart<cr>
+nnoremap <leader>gdt :GoDebugTest<cr>
+nnoremap <leader>gdS :GoDebugStop<cr>
+nnoremap <leader>gdr :GoDebugRestart<cr>
+nnoremap <leader>gdp :GoDebugPrint
+
+" other
+nnoremap <leader>gr :GoRename<cr>
+nnoremap <leader>gR :GoRename
+nnoremap <leader>grr :GoReferrers<cr>
+nnoremap gD :GoDoc<cr>
 
