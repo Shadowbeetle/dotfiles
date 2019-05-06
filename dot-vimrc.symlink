@@ -87,6 +87,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/vim-auto-save'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'cespare/vim-toml'
+Plug 'mbbill/undotree'
+Plug 'brooth/far.vim'               " search and replace in multiple files with https://github.com/brooth/far.vim 
 
 "Colorschemes
 " =====================
@@ -192,3 +194,6 @@ nnoremap <leader>gR :GoRename
 nnoremap <leader>grr :GoReferrers<cr>
 nnoremap gD :GoDoc<cr>
 
+" UndoTree
+" ========
+nnoremap <F5> :UndotreeToggle<cr>
