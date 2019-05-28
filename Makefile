@@ -12,7 +12,7 @@ $(HOME)/.gitignore-global: dot-gitignore-global.symlink
 	ln -s $(PWD)/dot-gitignore-global.symlink $(HOME)/.gitignore-global
 
 $(HOME)/.gitconfig: linux/dot-gitconfig.symlink
-	ln -s $(PWD)/dot-gitconfig.symlink $(HOME)/.gitconfig
+	ln -s $(PWD)/linux/dot-gitconfig.symlink $(HOME)/.gitconfig
 
 .PHONY: vim
 vim: $(HOME)/.vimrc
