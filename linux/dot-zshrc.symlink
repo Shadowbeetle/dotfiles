@@ -18,6 +18,9 @@ fi
 # Oh my zsh
 export ZSH=$HOME/.oh-my-zsh
 
+# vim 256 color support
+export TERM=screen-256color
+
 ### SHELL
 ## ZSH
 source ~/.zplug/init.zsh
