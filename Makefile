@@ -49,7 +49,7 @@ $(HOME)/.config/libinput-gestures.conf: .config linux/dot-config/libinput-gestur
 albert: $(HOME)/.config/albert/albert.conf
 $(HOME)/.config/albert/albert.conf: .config linux/dot-config/albert/albert.conf.symlink
 	mkdir -p $(HOME)/.config/albert
-	ln -s linux/dot-config/albert/albert.conf.symlink $(HOME)/albert/albert.conf
+	ln -s linux/dot-config/albert/albert.conf.symlink $(HOME)/.config/albert/albert.conf
 
 .PHONY: ranger
 ranger: $(HOME)/.config/ranger
