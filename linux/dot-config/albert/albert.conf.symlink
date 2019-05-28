@@ -27,7 +27,7 @@ enabled=true
 
 [org.albert.extension.python]
 enabled=true
-enabled_modules=ArchWiki, AUR, CoinMarketCap, Currency, DateTime, GoogleTranslate, Kill, MultiGoogleTranslate, Pacman, Timer, Wikipedia, CopyQ, Python, Trash, Npm, Ip, GnomeDictionary, GoldenDict, BaseConverter, Units
+enabled_modules=ArchWiki, AUR, CoinMarketCap, Currency, DateTime, GoogleTranslate, Kill, MultiGoogleTranslate, Pacman, Timer, CopyQ, Python, Trash, Npm, Ip, BaseConverter, Units, Wikipedia
 
 [org.albert.extension.snippets]
 enabled=true
