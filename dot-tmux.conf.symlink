@@ -28,7 +28,6 @@ unbind p
 bind p paste-buffer
 bind-key -Tcopy-mode-vi 'v' send -X begin-selection
 bind-key -Tcopy-mode-vi 'y' send -X copy-selection
-bind -t vi-copy y copy-pipe 'xclip -in -selection clipboard'
 
 # Vi mode
 set -g status-keys vi
@@ -115,7 +114,7 @@ set-window-option -g window-status-current-format " #I: #W "
 #### COLOUR (Solarized dark)
 
 # default statusbar colors
-set -g status-style "bg='#268bd2',fg='#073642',default"
+set -g status-style "bg=#268bd2,fg=#073642,default"
 
 # active window title colors
 
@@ -129,4 +128,4 @@ set -g status-interval 1
 set -g status-right-length 30
 set -g status-left-length 45
 
-run -b '~/.tmux/plugins/tpm/tpm'`
+run-shell -b '~/.tmux/plugins/tpm/tpm'
