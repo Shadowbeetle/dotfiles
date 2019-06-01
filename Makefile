@@ -52,11 +52,11 @@ $(HOME)/.config/albert/albert.conf: .config linux/dot-config/albert/albert.conf.
 	ln -s $(PWD)/linux/dot-config/albert/albert.conf.symlink $(HOME)/.config/albert/albert.conf
 
 .PHONY: ranger
-ranger: $(HOME)/.config/ranger
-$(HOME)/.config/ranger: .config linux/dot-config/ranger.symlink
-	ln -s $(PWD)/linux/dot-config/ranger.symlink $(HOME)/.config/ranger
+ranger: $(HOME)/.config/ranger/
+$(HOME)/.config/ranger/: .config linux/dot-config/ranger.symlink
+	ln -s $(PWD)/linux/dot-config/ranger.symlink $(HOME)/.config/ranger/
 
 .PHONY: redshift
-redshift: $(HOME)/.config/redshift
-$(HOME)/.config/redshift: .config linux/dot-config/redshift.symlink
-	ln -s $(PWD)/linux/dot-config/redshift.symlink $(HOME)/.config/redshift
+redshift: $(HOME)/.config/redshift/
+$(HOME)/.config/redshift/: .config linux/dot-config/redshift.symlink
+	ln -s $(PWD)/linux/dot-config/redshift.symlink $(HOME)/.config/redshift/
