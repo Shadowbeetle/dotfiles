@@ -116,6 +116,7 @@ nnoremap gd :YcmCompleter GoToDefinition<CR>
 nnoremap gr :YcmCompleter GoToReferences<CR> 
 
 let g:ycm_server_python_interpreter = '/usr/bin/python'
+
 " EasyMotion
 " ===================
 " n-character search 
@@ -194,8 +195,19 @@ nnoremap <leader>gdp :GoDebugPrint
 nnoremap <leader>gr :GoRename<cr>
 nnoremap <leader>gR :GoRename
 nnoremap <leader>grr :GoReferrers<cr>
-nnoremap gD :GoDoc<cr>
+nnoremap <leader>gD :GoDoc<cr>
 
 " UndoTree
 " ========
-nnoremap <F5> :UndotreeToggle<cr>
+nnoremap <leader>u :UndotreeToggle<cr>
+
+" GrammarousCheck
+" ===============
+
+let g:grammarous#show_first_error = 1
+nmap <F4> <Plug>(grammarous-fixit)
+nmap <f5> <Plug>(grammarous-move-to-previous-error)
+nmap <F6> <Plug>(grammarous-move-to-next-error)
+nmap <F7> <Plug>(grammarous-remove-error)
+nmap <leader>ca <Plug>(grammarous-fixall)
+
