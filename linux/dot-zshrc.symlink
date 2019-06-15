@@ -53,7 +53,6 @@ if ! zplug check --verbose; then
   fi
 fi
 # Load all the plugins!!!
-source $ZSH/oh-my-zsh.sh
 zplug load
 
 # source ~/.antigen/antigen.zsh
@@ -240,4 +239,3 @@ alias vnotes='vim ~/Dropbox/Notes'
 alias gnotes='gvim ~/Dropbox/Notes'
 
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
