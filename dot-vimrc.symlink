@@ -91,6 +91,7 @@ Plug 'brooth/far.vim'               " search and replace in multiple files with 
 Plug 'posva/vim-vue'
 Plug 'slashmili/alchemist.vim'
 Plug 'elixir-editors/vim-elixir'
+Plug 'wannesm/wmgraphviz.vim'
 
 "Colorschemes
 " =====================
