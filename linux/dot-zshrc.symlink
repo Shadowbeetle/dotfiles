@@ -208,7 +208,9 @@ export VAGRANT_DEFAULT_PROVIDER=virtualbox
 # $HOME/.secrets
 
 ### HOME APPLICATIONS
-eval $(thefuck --alias)
+if [ $commands[thfuck] ]; then
+  eval $(thefuck --alias)
+fi
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 
