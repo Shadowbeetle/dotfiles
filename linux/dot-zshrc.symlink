@@ -76,7 +76,7 @@ else
 fi
 
 # command line file manager
-if [ commands[ranger] ]; then
+if [ $commands[ranger] ]; then
   alias ra='ranger'
 else 
   echo "install ranger"
