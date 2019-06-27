@@ -66,6 +66,11 @@ COMPLETION_WAITING_DOTS="true"
 SPACESHIP_BATTERY_THRESHOLD=99
 SPACESHIP_TIME_SHOW=true
 
+# ls aliases
+alias ls="ls --color=auto" # colorize output properly
+alias ll="ls -lah"
+alias l="ls -lh"
+
 # quicly source .zshrc 
 alias sz='source ~/.zshrc'
 
