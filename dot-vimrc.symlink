@@ -148,6 +148,7 @@ nmap <Leader>hr <Plug>GitGutterUndoHunk
 imap <c-x><c-l> <plug>(fzf-complete-line)
 imap <c-x><c-f> <plug>(fzf-complete-path)
 nmap <C-p> :GFiles<CR>
+nmap <C-g> :FZF<CR>
 let g:fzf_layout = { 'down': '20%' }
 
 " Limelight
