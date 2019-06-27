@@ -15,9 +15,6 @@ else
   echo
 fi
 
-# Oh my zsh
-export ZSH=$HOME/.oh-my-zsh
-
 # vim 256 color support
 export TERM=screen-256color
 
@@ -30,6 +27,7 @@ zplug plugins/copybuffer, from:oh-my-zsh
 zplug plugins/gitignore, from:oh-my-zsh
 zplug plugins/nvm, from:oh-my-zsh
 zplug plugins/dirhistory, from:oh-my-zsh
+zplug "lib/completion", from:oh-my-zsh
 zplug denysdovhan/spaceship-prompt, use:spaceship.zsh, from:github, as:theme
 zplug zsh-users/zsh-autosuggestions
 zplug zsh-users/zsh-syntax-highlighting
@@ -40,6 +38,13 @@ zplug djui/alias-tips
 zplug "hlissner/zsh-autopair", defer:2
 zplug Tarrasch/zsh-bd
 zplug arzzen/calc.plugin.zsh
+
+# History setup
+export HISTFILE=~/.zsh_history
+# number of lines kept in HISTFILE
+export SAVEHIST=1000000 # one million lines should be around 50MB
+# number of lies kept in a session
+export HISTSIZE=100000 # one 
 
 # setup deer
 zle -N deer
