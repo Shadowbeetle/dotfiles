@@ -80,6 +80,7 @@ Plug 'easymotion/vim-easymotion'    " AceJump like movement
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'pangloss/vim-javascript'      " JavaScript syntax highlighting
+Plug 'mustache/vim-mustache-handlebars'
 Plug 'Raimondi/delimitMate'
 Plug 'vim-airline/vim-airline'      " vim powerline
 Plug 'vim-airline/vim-airline-themes'
