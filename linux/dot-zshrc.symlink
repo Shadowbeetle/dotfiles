@@ -71,6 +71,9 @@ alias ls="ls --color=auto" # colorize output properly
 alias ll="ls -lah"
 alias l="ls -lh"
 
+# grep coloring
+alias grep="grep --color=auto"
+
 # quicly source .zshrc 
 alias sz='source ~/.zshrc'
 
@@ -142,6 +145,29 @@ fi
 
 # editor
 export EDITOR="vim"
+
+# tmuxinator
+if [ ! $commands[gem] ]; then
+  echo "Ruby is missing and is needed for tmuxinator"
+  echo "run sudo pacman -S Ruby to install it"
+  echo
+else
+  RUBY_VERSION=$(gem environment | grep PATHS -A 2 | grep home | grep -Eo [0-9]+.[0-9]+.[0-9]+)
+  export PATH="$PATH:/home/nazgul/.gem/ruby/$RUBY_VERSION/bin"
+fi
+
+if [ ! $commands[tmuxinator] ]; then
+  echo "tmuxinator is missing"
+  echo "run gem gem install tmuxinator"
+  echo
+fi
+
+if [ ! -f /usr/bin/tmuxinator.zsh ]; then
+  echo "autocomplete is missing for tmuxinator"
+  echo "run sudo wget -P /usr/bin/ https://raw.githubusercontent.com/tmuxinator/tmuxinator/master/completion/tmuxinator.zsh"
+  echo "sudo chmod +x /usr/bin/tmuxinator.zsh"
+  echo
+fi
 
 ### DEVELOPMENT
 ## NODE.JS
