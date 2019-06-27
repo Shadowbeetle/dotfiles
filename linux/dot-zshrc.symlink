@@ -90,6 +90,7 @@ fi
 
 # command line file manager
 if [ $commands[ranger] ]; then
+  alias racd='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
   alias ra='ranger'
 else 
   echo "install ranger"
