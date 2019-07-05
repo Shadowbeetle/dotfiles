@@ -2,8 +2,11 @@
 set-environment -g TMUX_PLUGIN_MANAGER_PATH '~/.tmux/plugins/'
 
 set -g @plugin 'tmux-plugins/tmux-sensible'
-set -g @plugin 'tmux-plugins/tmux-yank'
+set -g @plugin 'tmux-plugins/tmux-yank' # Copy to system clipboard
 set -g @plugin 'christoomey/vim-tmux-navigator'
+set -g @plugin 'tmux-plugins/tmux-resurrect' # Restore tmux environment after system restart.
+set -g @plugin 'samoshkin/tmux-plugin-sysstat'
+set -g @plugin 'tmux-plugins/tmux-battery'
 
 # tmux display things in 256 colors
 set-option -ga terminal-overrides ",xterm-256color:Tc"
@@ -51,7 +54,7 @@ set -g renumber-windows on
 
 bind r source-file ~/.tmux.conf \; display "Config Reloaded!"
 
-bind w neww
+bind w neww -c "#{pane_current_path}"
 bind m choose-window
 bind a choose-session
 bind c kill-pane
@@ -67,8 +70,8 @@ bind ^j resize-pane -D
 bind ^k resize-pane -U
 bind ^l resize-pane -R
 
-bind v split-window -h
-bind s split-window
+bind v split-window -h -c "#{pane_current_path}"
+bind s split-window    -c "#{pane_current_path}"
 
 # colon :
 bind : command-prompt
@@ -99,11 +102,12 @@ set -g display-panes-time 1000
 
 setw -g automatic-rename on
 
-set -g status-interval 5
-set -g status-justify left
+set -g status-interval 1
+set -g status-justify centre
 
-set -g status-left ""
-set -g status-right ""
+set -g status-left "#{battery_status_bg} Batt: #{battery_icon} #{battery_percentage} #{battery_remain}"
+
+set -g status-right '#{sysstat_cpu} | #{sysstat_mem} | #{sysstat_swap}'
 
 set-window-option -g window-status-format " #I: #W "
 
@@ -112,9 +116,6 @@ set-window-option -g window-status-format " #I: #W "
 set-window-option -g window-status-current-format " #I: #W "
 
 #### COLOUR (Solarized dark)
-
-# default statusbar colors
-set -g status-style "bg=#268bd2,fg=#073642,default"
 
 # active window title colors
 
