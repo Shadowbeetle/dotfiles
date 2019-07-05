@@ -209,6 +209,10 @@ alias goc="go test -coverprofile cover.out && go tool cover -html=cover.out -o c
 
 ### DEVOPS
 ## KUBERNETES
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/google-cloud-sdk/path.zsh.inc"; fi
+
 alias kuse-mini='kubectl config use-context minikube'
 alias kc='kubectl'
 # Check if 'kubectl' is a command in $PATH
@@ -221,9 +225,8 @@ if [ $commands[kubectl] ]; then
     # Remove this function, subsequent calls will execute 'kubectl' directly
     unfunction "$0"
 
-    # Load auto-completion
+    # The next line enables shell command completion for gcloud.
     source <(kubectl completion zsh)
-
     # Execute 'kubectl' binary
     $0 "$@"
   }
@@ -276,5 +279,7 @@ hash -d -- notes="$HOME/Dropbox/Notes/"
 alias cnotes='code ~/Dropbox/Notes'
 alias vnotes='vim ~/Dropbox/Notes'
 alias gnotes='gvim ~/Dropbox/Notes'
+
+
 
 
