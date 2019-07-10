@@ -23,10 +23,8 @@ export TERM=xterm-256color
 source ~/.zplug/init.zsh
 
 zplug plugins/git, from:oh-my-zsh
-zplug plugins/copybuffer, from:oh-my-zsh
 zplug plugins/gitignore, from:oh-my-zsh
 zplug plugins/nvm, from:oh-my-zsh
-zplug plugins/dirhistory, from:oh-my-zsh
 zplug "lib/completion", from:oh-my-zsh
 zplug denysdovhan/spaceship-prompt, use:spaceship.zsh, from:github, as:theme
 zplug zsh-users/zsh-autosuggestions
@@ -283,3 +281,5 @@ alias gnotes='gvim ~/Dropbox/Notes'
 
 
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
