@@ -6,14 +6,7 @@
 # you have from there
 #
 ################################################################################
-
-[ -f $HOME/.secrets ] && source $HOME/.secrets
-if [ -f $HOME/.secrets ]; then
-  source $HOME/.secrets
-else
-  echo "ERROR .secrets file not found, some programs might not work"
-  echo
-fi
+LOG_START=`date +%s%N`
 
 # vim 256 color support
 export TERM=xterm-256color
@@ -22,20 +15,19 @@ export TERM=xterm-256color
 ## ZSH
 source ~/.zplug/init.zsh
 
-zplug plugins/git, from:oh-my-zsh
-zplug plugins/gitignore, from:oh-my-zsh
-zplug plugins/nvm, from:oh-my-zsh
-zplug "lib/completion", from:oh-my-zsh
+zplug plugins/git, from:oh-my-zsh # git aliases
+zplug plugins/nvm, from:oh-my-zsh # source nvm and add autocmpletion
+zplug plugins/autojump, from:oh-my-zsh # add j / autojump
+zplug "lib/completion", from:oh-my-zsh # add directory tab completion chooser
 zplug denysdovhan/spaceship-prompt, use:spaceship.zsh, from:github, as:theme
-zplug zsh-users/zsh-autosuggestions
-zplug zsh-users/zsh-syntax-highlighting
-zplug zsh-users/zsh-completions
+zplug zsh-users/zsh-autosuggestions # intellisense
+zplug zsh-users/zsh-syntax-highlighting 
+zplug zsh-users/zsh-completions # additional autocompletions to GNU commandss
 zplug felixr/docker-zsh-completion
 zplug vifon/deer, use:deer
 zplug djui/alias-tips
+zplug "nnao45/zsh-kubectl-completion", lazy:on
 zplug "hlissner/zsh-autopair", defer:2
-zplug Tarrasch/zsh-bd
-zplug arzzen/calc.plugin.zsh
 
 # History setup
 export HISTFILE=~/.zsh_history
@@ -81,7 +73,7 @@ alias sz='source ~/.zshrc'
 if [ -f $HOME/.fzf.zsh ]; then
   source $HOME/.fzf.zsh
 else
-  echo "install fzf into $HOME/.fzf.zs"
+  echo "install fzf into $HOME/.fzf.zsh"
   echo "run 'git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install'"
   echo
 fi
@@ -96,17 +88,6 @@ else
   echo
 fi
 
-# autojump 
-# https://github.com/wting/autojump/issues/488
-# replace typeset -U to typeset -u in autojump.zsh
-if [ -f /usr/share/autojump/autojump.zsh ]; then
-  source /usr/share/autojump/autojump.zsh
-else
-   echo "install autojump"
-   echo "run 'sudo pacman -S autojump'"
-   echo
-fi
-
 # colorized cat
 # http://pygments.org/docs/cmdline/
 if [ $commands[pygmentize] ]; then
@@ -116,9 +97,6 @@ else
   echo "run 'pacman -S pygmentize'"
   echo
 fi
-
-# case insensitive grep
-alias igrep="grep -i"
 
 # functions
 function killport() {
@@ -170,10 +148,6 @@ fi
 
 ### DEVELOPMENT
 ## NODE.JS
-# NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-nvm use 2> /dev/null
 
 # overwrite builtin directory movements to use nvm
 function cd () {
@@ -189,13 +163,9 @@ function pushd () {
 }
 
 # NPM
-# token in secrets
 alias npml="npm run lint -- --fix 2> /dev/null"
 alias npmt="npm t 2> /dev/null"
 alias npmlt="npml && npmt"
-
-# list directory tree without node_modules
-alias tree-node="tree -I node_modules"
 
 ## GO
 export GOPATH=$HOME/Projects
@@ -211,24 +181,7 @@ alias goc="go test -coverprofile cover.out && go tool cover -html=cover.out -o c
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/google-cloud-sdk/path.zsh.inc"; fi
 
-alias kuse-mini='kubectl config use-context minikube'
 alias kc='kubectl'
-# Check if 'kubectl' is a command in $PATH
-if [ $commands[kubectl] ]; then
-
-  # Placeholder 'kubectl' shell function:
-  # Will only be executed on the first call to 'kubectl'
-  kubectl() {
-
-    # Remove this function, subsequent calls will execute 'kubectl' directly
-    unfunction "$0"
-
-    # The next line enables shell command completion for gcloud.
-    source <(kubectl completion zsh)
-    # Execute 'kubectl' binary
-    $0 "$@"
-  }
-fi
 
 ## Docker
 alias up='docker-compose up'
@@ -237,23 +190,11 @@ alias down='docker-compose down'
 ## AWS
 export PATH=~/.local/bin:$PATH
 
-## VAGRANT
-export VAGRANT_HOME=/run/media/ext4/VirtualBox/
-export VAGRANT_DEFAULT_PROVIDER=virtualbox
-
-## SERVER SSH ALIASES
-# ssh aliases
-# $HOME/.secrets
-
 ### HOME APPLICATIONS
-if [ $commands[thfuck] ]; then
-  eval $(thefuck --alias)
-fi
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 
 alias isod='date +%Y-%m-%d'
-alias cisod="isod | pbcopy"
 alias xo='xdg-open'
 
 export XDG_DATA_DIRS="$XDG_DATA_DIRS:/var/lib/flatpak/exports/share/applications"
@@ -266,7 +207,6 @@ hash -d -- apps='/usr/share/applications/'
 hash -d -- dot="$HOME/Projects/src/github.com/Shadowbeetle/dotfiles/"
 alias cdot='code ~/Projects/src/github.com/Shadowbeetle/dotfiles'
 alias vdot='vim ~/Projects/src/github.com/Shadowbeetle/dotfiles'
-alias gdot='gvim ~/Projects/src/github.com/Shadowbeetle/dotfiles'
 
 alias vv='vim ~/.vimrc'
 alias vz='vim ~/.zshrc'
@@ -276,10 +216,7 @@ hash -d -- projects="$GOPATH/src"
 hash -d -- notes="$HOME/Dropbox/Notes/"
 alias cnotes='code ~/Dropbox/Notes'
 alias vnotes='vim ~/Dropbox/Notes'
-alias gnotes='gvim ~/Dropbox/Notes'
 
+LOG_END=`date +%s%N`
 
-
-
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+echo Startup took $((($LOG_END - $LOG_START) / (1000 * 1000))) milliseconds
