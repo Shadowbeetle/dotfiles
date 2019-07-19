@@ -17,6 +17,9 @@ $(HOME)/.gitconfig: linux/dot-gitconfig.symlink
 .PHONY: vim
 vim: $(HOME)/.vimrc
 $(HOME)/.vimrc: dot-vimrc.symlink
+	mkdir -p ~/.vim/swap
+	mkdir -p ~/.vim/backup
+	mkdir -p ~/.vim/undodir
 	ln -s $(PWD)/dot-vimrc.symlink $(HOME)/.vimrc
 
 .PHONY: tmux
