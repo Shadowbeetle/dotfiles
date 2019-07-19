@@ -19,6 +19,7 @@ zplug plugins/git, from:oh-my-zsh # git aliases
 zplug plugins/nvm, from:oh-my-zsh # source nvm and add autocmpletion
 zplug plugins/autojump, from:oh-my-zsh # add j / autojump
 zplug "lib/completion", from:oh-my-zsh # add directory tab completion chooser
+zplug "lib/directories", from:oh-my-zsh # add directory tab completion chooser
 zplug denysdovhan/spaceship-prompt, use:spaceship.zsh, from:github, as:theme
 zplug zsh-users/zsh-autosuggestions # intellisense
 zplug zsh-users/zsh-syntax-highlighting 
@@ -220,3 +221,5 @@ alias vnotes='vim ~/Dropbox/Notes'
 LOG_END=`date +%s%N`
 
 echo Startup took $((($LOG_END - $LOG_START) / (1000 * 1000))) milliseconds
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
