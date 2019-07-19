@@ -105,7 +105,9 @@ setw -g automatic-rename on
 set -g status-interval 1
 set -g status-justify centre
 
-set -g status-left "#{battery_status_bg} Batt: #{battery_icon} #{battery_percentage} #{battery_remain}"
+set -g status-style "bg=black"
+
+set -g status-left "Batt: #{battery_icon} #{battery_percentage} #{battery_remain}"
 
 set -g status-right '#{sysstat_cpu} | #{sysstat_mem} | #{sysstat_swap}'
 

@@ -220,6 +220,10 @@ alias vnotes='vim ~/Dropbox/Notes'
 
 LOG_END=`date +%s%N`
 
-echo Startup took $((($LOG_END - $LOG_START) / (1000 * 1000))) milliseconds
+if [ $commands[neofetch] ]; then
+  neofetch
+else 
+  echo "install neofetch to get a nice welcome"
+fi
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+echo Startup took $((($LOG_END - $LOG_START) / (1000 * 1000))) milliseconds

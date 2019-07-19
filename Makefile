@@ -60,3 +60,9 @@ $(HOME)/.config/ranger/: .config linux/dot-config/ranger.symlink
 redshift: $(HOME)/.config/redshift/
 $(HOME)/.config/redshift/: .config linux/dot-config/redshift.symlink
 	ln -s $(PWD)/linux/dot-config/redshift.symlink $(HOME)/.config/redshift/
+
+.PHONY: neofetch
+neofetch: $(HOME)/.config/neofetch.symlink
+$(HOME)/.config/neofetch.symlink: .config linux/dot-config/neofetch.symlink
+	ln -s $(PWD)/linux/dot-config/neofetch.symlink $(HOME)/.config/neofetch
+
