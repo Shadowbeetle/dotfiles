@@ -23,6 +23,17 @@ set cursorcolumn        " highlight current column
 set cursorline
 set splitbelow
 set splitright
+:command WQA wqa
+:command WQa wqa
+:comman Wqa wqa
+:command WQ wq
+:command Wq wq
+:command WA wa
+:command Wa wa
+:command QA qa
+:command Qa qa
+:command W w
+:command Q q
 
 " Protect changes between writes. Default values of
 " updatecount (200 keystrokes) and updatetime
