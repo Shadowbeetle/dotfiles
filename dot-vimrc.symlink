@@ -130,7 +130,14 @@ Plug 'wannesm/wmgraphviz.vim'
 "Colorschemes
 " =====================
 
-Plug 'dracula/vim', { 'as': 'dracula' }
+" Plug 'dracula/vim', { 'as': 'dracula' }
+" Plug 'srcery-colors/srcery-vim'
+Plug 'gruvbox-community/gruvbox'
+
+" Colorscheme
+" =======
+
+color gruvbox
 
 " For writing
 " ====================
@@ -196,11 +203,6 @@ let g:limelight_conceal_guifg = '#777777'
 
 let g:limelight_default_coefficient=0.7
 nnoremap <leader>f :Limelight!!<cr>
-
-" Dracula
-" =======
-
-color dracula
 
 " Airline
 " =======
