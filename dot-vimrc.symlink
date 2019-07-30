@@ -131,13 +131,13 @@ Plug 'wannesm/wmgraphviz.vim'
 " =====================
 
 " Plug 'dracula/vim', { 'as': 'dracula' }
-" Plug 'srcery-colors/srcery-vim'
-Plug 'gruvbox-community/gruvbox'
+Plug 'srcery-colors/srcery-vim'
+" Plug 'gruvbox-community/gruvbox'
 
 " Colorscheme
 " =======
 
-color gruvbox
+color srcery
 
 " For writing
 " ====================
