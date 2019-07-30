@@ -127,24 +127,27 @@ Plug 'slashmili/alchemist.vim'
 Plug 'elixir-editors/vim-elixir'
 Plug 'wannesm/wmgraphviz.vim'
 
-"Colorschemes
-" =====================
-
-" Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'srcery-colors/srcery-vim'
-" Plug 'gruvbox-community/gruvbox'
-
-" Colorscheme
-" =======
-
-color srcery
 
 " For writing
 " ====================
 Plug 'junegunn/limelight.vim', { 'on': 'Limelight' }     " Focusing tool
 Plug 'junegunn/goyo.vim', { 'on': 'Limelight' }          " Focusing tool
 Plug 'rhysd/vim-grammarous', { 'on': 'GrammarousCheck' } " English spell check
+
+"Colorschemes
+" =====================
+
+" Plug 'dracula/vim', { 'as': 'dracula' }
+" Plug 'srcery-colors/srcery-vim'
+Plug 'gruvbox-community/gruvbox'
+
 call plug#end()
+
+" Colorscheme
+" =======
+
+color gruvbox
+set background=dark
 
 " YouCompleteMe
 " ===================
