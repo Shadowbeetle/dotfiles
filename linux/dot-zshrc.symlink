@@ -221,3 +221,5 @@ else
 fi
 
 echo Startup took $((($LOG_END - $LOG_START) / (1000 * 1000))) milliseconds
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
