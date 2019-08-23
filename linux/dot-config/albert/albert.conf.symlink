@@ -1,6 +1,7 @@
 [General]
 hotkey=Alt+W
 showTray=true
+telemetry=true
 terminal=terminator -x
 
 [org.albert.extension.applications]
@@ -27,7 +28,7 @@ enabled=true
 
 [org.albert.extension.python]
 enabled=true
-enabled_modules=ArchWiki, AUR, CoinMarketCap, Currency, DateTime, GoogleTranslate, Kill, MultiGoogleTranslate, Pacman, Timer, CopyQ, Python, Trash, Npm, Ip, BaseConverter, Units, Wikipedia
+enabled_modules=ArchWiki, AUR, CoinMarketCap, Currency, DateTime, GoogleTranslate, Kill, MultiGoogleTranslate, Pacman, Timer, CopyQ, Python, Trash, Npm, Ip, BaseConverter, Units, Wikipedia, base_converter, currency_converter, datetime, units, google_translate, kill, locate, youtube
 
 [org.albert.extension.snippets]
 enabled=true
