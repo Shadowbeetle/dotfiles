@@ -194,6 +194,39 @@ alias xo='xdg-open'
 
 export XDG_DATA_DIRS="$XDG_DATA_DIRS:/var/lib/flatpak/exports/share/applications"
 
+function clock() {
+while true
+do
+  echo -n `date "+%A %Y-%m-%d %H:%M:%S"` 
+  sleep 1
+  echo -en "\r"
+done
+}
+
+countdown() (
+  if [ -z $1 ]; then
+    echo "Usage:"
+    echo "countdown \"00:00:10\" # 10 sec"
+    echo "countdown \"00:00:30\" # 30 sec"
+    echo "countdown \"00:01:42\" # 1 min 42 sec"
+    exit 1
+  fi
+ 
+  hours=$(awk -F ":" '{ print $1 }' <<< $1)
+  minutes=$(awk -F ":" '{ print $2 }' <<< $1)
+  seconds=$(awk -F ":" '{ print $3 }' <<< $1)
+
+  secs=$(( $hours * 3600 + $minutes * 60 + $seconds ))
+  while [ $secs -gt 0 ]
+  do
+    sleep 1 &
+    printf "\r%02d:%02d:%02d" $((secs/3600)) $(( (secs/60)%60)) $((secs%60))
+    secs=$(( $secs - 1 ))
+    wait
+  done
+  echo
+)
+
 ## Navigation
 # Jump to dotfiles
 # jump instantly to applications directory
