@@ -21,6 +21,7 @@ zplug plugins/autojump, from:oh-my-zsh # add j / autojump
 zplug "lib/completion", from:oh-my-zsh # add directory tab completion chooser
 zplug "lib/directories", from:oh-my-zsh # add directory tab completion chooser
 zplug "lib/history", from:oh-my-zsh # add HISTFILE, HISTSIZE, SAVEHIST and history command config
+zplug romkatv/powerlevel10k, use:powerlevel10k.zsh-theme
 # zplug denysdovhan/spaceship-prompt, use:spaceship.zsh, from:github, as:theme
 zplug zsh-users/zsh-autosuggestions # intellisense
 zplug zsh-users/zsh-syntax-highlighting 
@@ -256,3 +257,6 @@ fi
 echo Startup took $((($LOG_END - $LOG_START) / (1000 * 1000))) milliseconds
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
