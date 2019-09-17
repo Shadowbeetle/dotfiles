@@ -21,7 +21,7 @@ zplug plugins/autojump, from:oh-my-zsh # add j / autojump
 zplug "lib/completion", from:oh-my-zsh # add directory tab completion chooser
 zplug "lib/directories", from:oh-my-zsh # add directory tab completion chooser
 zplug "lib/history", from:oh-my-zsh # add HISTFILE, HISTSIZE, SAVEHIST and history command config
-zplug denysdovhan/spaceship-prompt, use:spaceship.zsh, from:github, as:theme
+# zplug denysdovhan/spaceship-prompt, use:spaceship.zsh, from:github, as:theme
 zplug zsh-users/zsh-autosuggestions # intellisense
 zplug zsh-users/zsh-syntax-highlighting 
 zplug zsh-users/zsh-completions # additional autocompletions to GNU commandss
