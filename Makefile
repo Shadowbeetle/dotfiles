@@ -32,6 +32,7 @@ Xmodmap: $(HOME)/Xmodmap
 $(HOME)/Xmodmap: linux/dot-Xmodmap.symlink
 	ln -s $(PWD)/linux/dot-Xmodmap.symlink $(HOME)/.Xmodmap
 
+
 .PHONY: vscode
 vscode: $(HOME)/.vscode/settings.json
 $(HOME)/.vscode/settings.json: linux/vscode/settings.json.symlink
@@ -42,6 +43,11 @@ $(HOME)/.vscode/settings.json: linux/vscode/settings.json.symlink
 .config: $(HOME)/.config
 $(HOME)/.config:
 	mkdir -p $(HOME)/.config
+
+.PHONY: xfce
+xfce: $(HOME)/.config/xfce4
+$(HOME)/.config/xfce4: .config linux/dot-config/xfce4.symlink
+	ln -s $(PWD)/linux/dot-config/xfce4.symlink $(HOME)/.config/xfce4
 
 .PHONY: libinput-gestures
 libinput-gestures: $(HOME)/.config/libinput-gestures.conf
