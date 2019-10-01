@@ -23,6 +23,8 @@ set cursorcolumn        " highlight current column
 set cursorline
 set splitbelow
 set splitright
+set ttymouse=xterm2     " use the mouse in tmux
+set mouse=a             " use the mouse in tmux
 :command WQA wqa
 :command WQa wqa
 :comman Wqa wqa
@@ -88,13 +90,15 @@ augroup markdown
   au FileType markdown :setlocal foldmethod=manual
 augroup END
 
-" Only show cursorcolumn in the current window and in normal mode.
+" Only show cursorcolumn and nonprintable characters in the current window and in normal mode.
 augroup cline
   au!
   au InsertEnter * set nocursorcolumn
   au InsertEnter * set nocursorline
+  au InsertEnter * set nolist
   au InsertLeave * set cursorcolumn
   au InsertLeave * set cursorline
+  au InsertLeave * set list
 augroup END
 
 "" Plugins
@@ -113,7 +117,11 @@ Plug 'easymotion/vim-easymotion'    " AceJump like movement
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'pangloss/vim-javascript'      " JavaScript syntax highlighting
+" Plug 'prettier/vim-prettier', {
+"   \ 'do': 'npm install',
+"   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 Plug 'mustache/vim-mustache-handlebars'
+Plug 'dense-analysis/ale'
 Plug 'Raimondi/delimitMate'
 Plug 'vim-airline/vim-airline'      " vim powerline
 Plug 'vim-airline/vim-airline-themes'
@@ -161,6 +169,11 @@ nnoremap gd :YcmCompleter GoToDefinition<CR>
 nnoremap gr :YcmCompleter GoToReferences<CR> 
 
 let g:ycm_server_python_interpreter = '/usr/bin/python'
+
+" ale
+" ===
+let g:ale_fixers = {'javascript': ['prettier-eslint', 'eslint']}
+let g:ale_fix_on_save = 1
 
 " EasyMotion
 " ===================
@@ -222,6 +235,16 @@ let g:auto_save_in_insert_mode = 0
 
 let g:go_fmt_command = "goimports"
 let g:go_fmt_experimental = 1
+
+" vim-javascript
+" ==============
+
+let g:javascript_plugin_jsdoc = 1
+
+augroup javascript_folding
+  au!
+  au FileType javascript setlocal foldmethod=syntax
+augroup END
 
 " debug
 nnoremap <leader>gdb :GoDebugBreakpoint<cr>
