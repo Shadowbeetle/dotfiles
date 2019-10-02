@@ -62,10 +62,12 @@ set undodir^=~/.vim/undo//
 
 nnoremap <leader>df :w !diff % -<cr>
 
-nnoremap <leader>ev :vsplit $MYVIMRC<cr> " edit vimrc in a different split screen
-nnoremap <leader>sv :source $MYVIMRC<cr> " source vimrc
-
-nnoremap <leader>sl :set list!<cr>       " show/hid\l non printable characters
+" edit vimrc in a different split screen
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+" source vimrc
+nnoremap <leader>sv :source $MYVIMRC<cr>
+" show/hid\l non printable characters
+nnoremap <leader>ss :set list!<cr>
 
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
