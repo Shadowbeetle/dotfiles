@@ -1,7 +1,6 @@
     {
         "window.zoomLevel": 0,
         "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?_",
-        "workbench.colorTheme": "Tomorrow Night Blue",
         "editor.formatOnSave": true,
         "git.autofetch": true,
         "python.pythonPath": "/usr/bin/python",
@@ -14,5 +13,6 @@
         "vim.handleKeys": {
             "<C-d>": true,
             "<C-S-g>": false
-        }
+        },
+        "editor.tabSize": 2
     }

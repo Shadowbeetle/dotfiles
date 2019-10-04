@@ -34,10 +34,11 @@ $(HOME)/Xmodmap: linux/dot-Xmodmap.symlink
 
 
 .PHONY: vscode
-vscode: $(HOME)/.vscode/settings.json
-$(HOME)/.vscode/settings.json: linux/vscode/settings.json.symlink
+vscode: $(HOME)/.config/Code/User/settings.json
+$(HOME)/.config/Code/User/settings.json: .config linux/vscode/settings.json.symlink
 	mkdir -p $(HOME)/.vscode
-	ln -s $(PWD)/linux/vscode/settings.json.symlink $(HOME)/.vscode/settings.json
+	ln -s $(PWD)/linux/vscode/settings.json.symlink $(HOME)/.config/Code/User/settings.json
+
 
 .PHONY: .config
 .config: $(HOME)/.config
