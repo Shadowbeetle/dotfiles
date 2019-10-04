@@ -1,5 +1,5 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-web-browser.desktop,exo-mail-reader.desktop,Trine.desktop,steam.desktop,onboard.desktop
-recent=docky.desktop,albert.desktop,xfce-display-settings.desktop,audacity.desktop,xfce4-terminal.desktop,xfce4-terminal-settings.desktop,exo-file-manager.desktop,google-chrome.desktop,nm-connection-editor.desktop,org.gnome.DiskUtility.desktop
+recent=albert.desktop,visual-studio-code.desktop,docky.desktop,xfce-display-settings.desktop,audacity.desktop,xfce4-terminal.desktop,xfce4-terminal-settings.desktop,exo-file-manager.desktop,google-chrome.desktop,nm-connection-editor.desktop
 button-title=Applications
 button-icon=/usr/share/archlinux/archlinux.png
 button-single-row=false

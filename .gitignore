@@ -1,4 +1,7 @@
 .secrets
 .trace
 .username
-**/albert/core.db
+albert
+!albert.conf
+**/Code/**/*
+!Code/User/settings.json
