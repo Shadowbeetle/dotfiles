@@ -1,0 +1,17 @@
+# /home/nazgul/.config/tmuxinator/day-to-day.yml
+
+name: day-to-day
+root: ~/
+
+windows:
+  - base:
+  - code: 
+      root: "~/Projects/src/github.com/RisingStack/"
+  - blog:
+      root: ~/Projects/src/github.com/RisingStack/blog-posts
+      panes:
+        - vim .
+  - notes:
+      root: ~/Dropbox/Notes
+      panes:
+        - vim .

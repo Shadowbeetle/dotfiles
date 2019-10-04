@@ -1,0 +1,25 @@
+# /home/nazgul/.config/tmuxinator/day-to-day.yml
+
+name: gorilla
+root: ~/
+
+windows:
+  - base:
+  - code: 
+      layout:  e3b2,238x52,0,0[238x46,0,0,25,238x5,0,47{119x5,0,47,27,118x5,120,47,28}]
+      root: "~/Projects/src/github.com/RisingStack/go-gorilla-intro"
+      panes:
+        - vim .
+        - ""
+        - ""
+  - blog:
+      layout: c1ec,238x52,0,0[238x46,0,0,24,238x5,0,47,30]
+      root: ~/Projects/src/github.com/RisingStack/blog-posts/go-beginner/
+      panes:
+        - vim .
+        - ""
+  - notes:
+      root: ~/Dropbox/Notes
+      panes:
+        - ranger
+

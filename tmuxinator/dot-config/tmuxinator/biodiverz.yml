@@ -1,0 +1,24 @@
+# /home/nazgul/.config/tmuxinator/biodiverz.yml
+
+name: gorilla
+root: ~/
+
+windows:
+  - base:
+  - backend:
+      layout: c1ec,238x52,0,0[238x46,0,0,24,238x5,0,47,30]
+      root: ~/Projects/src/github.com/mannabee/biodiverz/
+      panes:
+        - vim .
+        - ""
+  - frontend: 
+      layout:  c1ec,238x52,0,0[238x46,0,0,24,238x5,0,47,30]
+      root: "~/Projects/src/github.com/mannabee/biodiverz-ui/"
+      panes:
+        - vim .
+        - ""
+  - notes:
+      root: ~/Dropbox/Notes
+      panes:
+        - ranger
+
