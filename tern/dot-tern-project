@@ -4,6 +4,10 @@
     "es_modules": {}
   },
   "libs": [
+    "browser",
+    "ecmascript",
+    "vue",
+    "lodash",
     "ecma5",
     "ecma6"
   ],
