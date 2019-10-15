@@ -6,6 +6,7 @@ filetype plugin on
 filetype indent on
 syntax enable
 syntax on
+set omnifunc=syntaxcomplete#Complete
 
 set tabstop=2           " when indenting with '>', use 2 spaces width
 set shiftwidth=2        " On pressing tab, insert 2 spaces
@@ -133,6 +134,7 @@ Plug 'vim-airline/vim-airline'      " vim powerline
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/vim-auto-save'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 Plug 'cespare/vim-toml'
 Plug 'mbbill/undotree'
 Plug 'brooth/far.vim'               " search and replace in multiple files with https://github.com/brooth/far.vim 
@@ -171,8 +173,8 @@ let g:ycm_key_list_select_completion = ['<Down>']
 let g:ycm_key_list_previous_completion = ['<Up>']
 let g:ycm_key_list_stop_completion = ['<C-y>', '<TAB>']
 
-nnoremap gd :YcmCompleter GoToDefinition<CR>
-nnoremap gr :YcmCompleter GoToReferences<CR> 
+nnoremap gd :TernDef<CR>
+nnoremap gr :TerRefs<CR> 
 
 let g:ycm_server_python_interpreter = '/usr/bin/python'
 
