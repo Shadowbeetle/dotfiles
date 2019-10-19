@@ -8,6 +8,16 @@ syntax enable
 syntax on
 set omnifunc=syntaxcomplete#Complete
 
+" omnicomplete details: https://vim.fandom.com/wiki/Make_Vim_completion_popup_menu_work_just_like_in_an_IDE
+set completeopt=longest,menuone
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
+  \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+
+inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
+  \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+
+
 set tabstop=2           " when indenting with '>', use 2 spaces width
 set shiftwidth=2        " On pressing tab, insert 2 spaces
 set expandtab           " use spaces instead of tabs
@@ -63,14 +73,14 @@ end
 set undofile
 set undodir^=~/.vim/undo//
 
-nnoremap <leader>df :w !diff % -<cr>
-
 " edit vimrc in a different split screen
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 " source vimrc
 nnoremap <leader>sv :source $MYVIMRC<cr>
 " show/hid\l non printable characters
 nnoremap <leader>ss :set list!<cr>
+" specify file to be diffed against the currently open one
+nnoremap <leader>df :vert diffsplit 
 
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -165,13 +175,8 @@ call plug#end()
 color gruvbox
 set background=dark
 
-" YouCompleteMe
-" ===================
-let g:ycm_global_ycm_extra_conf = '/usr/share/vim/vimfiles/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
-let g:ycm_server_python_interpreter = '/usr/bin/python2'
-let g:ycm_key_list_select_completion = ['<Down>']
-let g:ycm_key_list_previous_completion = ['<Up>']
-let g:ycm_key_list_stop_completion = ['<C-y>', '<TAB>']
+" Tern
+" ==================
 
 nnoremap gd :TernDef<CR>
 nnoremap gr :TerRefs<CR> 
