@@ -178,8 +178,14 @@ set background=dark
 " Tern
 " ==================
 
-nnoremap gd :TernDef<CR>
-nnoremap gr :TerRefs<CR> 
+augroup javascript_completion
+  au!
+  au FileType javascript nnoremap <leader>td :TernDef<CR>
+  au FileType javascript nnoremap <leader>tr :TernRename<CR>
+  au FileType javascript nnoremap <leader>tR :TernRefs<CR>
+augroup END
+
+
 
 let g:ycm_server_python_interpreter = '/usr/bin/python'
 
