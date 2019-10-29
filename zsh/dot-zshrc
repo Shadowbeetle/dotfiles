@@ -21,8 +21,9 @@ zplug plugins/autojump, from:oh-my-zsh # add j / autojump
 zplug "lib/completion", from:oh-my-zsh # add directory tab completion chooser
 zplug "lib/directories", from:oh-my-zsh # add directory tab completion chooser
 zplug "lib/history", from:oh-my-zsh # add HISTFILE, HISTSIZE, SAVEHIST and history command config
-zplug romkatv/powerlevel10k, use:powerlevel10k.zsh-theme
+# zplug romkatv/powerlevel10k, use:powerlevel10k.zsh-theme
 # zplug denysdovhan/spaceship-prompt, use:spaceship.zsh, from:github, as:theme
+zplug "themes/amuse", from:oh-my-zsh, as:theme
 zplug zsh-users/zsh-autosuggestions # intellisense
 zplug zsh-users/zsh-syntax-highlighting 
 zplug zsh-users/zsh-completions # additional autocompletions to GNU commandss
@@ -46,11 +47,9 @@ fi
 # Load all the plugins!!!
 zplug load
 
-# source ~/.antigen/antigen.zsh
+export POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(time)
 
 COMPLETION_WAITING_DOTS="true"
-SPACESHIP_BATTERY_THRESHOLD=99
-SPACESHIP_TIME_SHOW=true
 
 # ls aliases
 alias ls="ls --color=auto" # colorize output properly
