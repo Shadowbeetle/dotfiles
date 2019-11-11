@@ -80,4 +80,7 @@
         "eslint.lintTask.enable": true,
         "editor.defaultFormatter": "numso.prettier-standard-vscode",
         "keyboard.dispatch": "keyCode",
+        "[html]": {
+            "editor.defaultFormatter": "vscode.html-language-features"
+        },
     }
