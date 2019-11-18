@@ -127,6 +127,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-gitgutter'       " Nice git lines at the side
 
 Plug 'tpope/vim-surround'           " Surround
+Plug 'tpope/vim-repeat'             " Make cs ds yss repeatable
 Plug 'tpope/vim-commentary'         " Commentary
 Plug 'tpope/vim-markdown', { 'for': 'markdown' }
 
