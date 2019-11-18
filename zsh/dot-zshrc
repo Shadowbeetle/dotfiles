@@ -33,9 +33,6 @@ zplug djui/alias-tips
 zplug "nnao45/zsh-kubectl-completion", lazy:on
 zplug "hlissner/zsh-autopair", defer:2
 
-# setup deer
-zle -N deer
-bindkey '\ek' deer
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
@@ -47,9 +44,18 @@ fi
 # Load all the plugins!!!
 zplug load
 
-export POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(time)
-
 COMPLETION_WAITING_DOTS="true"
+
+# use Vi mode
+bindkey -v
+
+# make current line editable in vim
+autoload edit-command-line; zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
+
+# setup deer
+zle -N deer
+bindkey '\ek' deer
 
 # ls aliases
 alias ls="ls --color=auto" # colorize output properly
