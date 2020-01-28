@@ -6,8 +6,7 @@ albert
 **/Code/**/*
 !Code/User/settings.json
 dot-config/xfce/**/xfce4-screenshooter
-dot-config/xfce/**/xfce-perchannel-xml/thunar.xml
-dot-config/xfce/**/xfce-perchannel-xml/xfce4-panel.xml
+dot-config/xfce/**/xfce-perchannel-xml/**/*
 **/ranger/tagged
 **/ranger/history
 **/ranger/bookmarks
