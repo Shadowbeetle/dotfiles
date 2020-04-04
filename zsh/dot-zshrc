@@ -170,7 +170,7 @@ alias npmlt="npml && npmt"
 
 ## GO
 export GOPATH=$HOME/Projects
-export GOROOT=$HOME/go
+export GOROOT=$HOME/go/1.13
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 export GO111MODULE=auto
 
