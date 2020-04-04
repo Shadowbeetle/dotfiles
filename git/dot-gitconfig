@@ -25,3 +25,8 @@
   type = cat-file -t
 	dump = cat-file -p
   p = push origin HEAD
+	d = difftool
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
