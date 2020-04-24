@@ -86,4 +86,6 @@
         "editor.codeActionsOnSave": {
             "source.fixAll.eslint": true
         },
+        "files.autoSave": "afterDelay",
+        "todo-tree.tree.showScanModeButton": false,
     }
