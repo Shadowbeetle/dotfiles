@@ -26,6 +26,7 @@ set smartindent
 set smarttab
 set wildignore+=node_modules/**
 set wildignore+=vendor/**
+set wildignore+=package-lock.json
 set number              " turn line numbering on
 set undolevels=1000
 set autochdir           " change directory to currently edited file
@@ -123,6 +124,7 @@ augroup END
 call plug#begin('~/.vim/bundle')
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/rainbow_parentheses.vim'
 
 Plug 'airblade/vim-gitgutter'       " Nice git lines at the side
 
@@ -146,6 +148,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/vim-auto-save'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
+Plug 'HerringtonDarkholme/yats.vim', { 'for': 'typescript' }
+Plug 'Quramy/tsuquyomi', { 'for': 'typescript' }
 Plug 'cespare/vim-toml'
 Plug 'mbbill/undotree'
 Plug 'brooth/far.vim'               " search and replace in multiple files with https://github.com/brooth/far.vim 
@@ -186,13 +190,18 @@ augroup javascript_completion
   au FileType javascript nnoremap <leader>tR :TernRefs<CR>
 augroup END
 
+" Tsuquyomi
+" =========
 
-
-let g:ycm_server_python_interpreter = '/usr/bin/python'
-
+augroup tsuquyomi
+  au!
+  set ballooneval
+  autocmd FileType typescript setlocal balloonexpr=tsuquyomi#balloonexpr()
+  autocmd FileType typescript nmap <Leader>t :echo tsuquyomi#hint()<CR>
+augroup END
 " ale
 " ===
-let g:ale_fixers = {'javascript': ['eslint']}
+let g:ale_fixers = {'javascript': ['eslint'], 'typescript': ['eslint']}
 let g:ale_fix_on_save = 1
 
 " EasyMotion
