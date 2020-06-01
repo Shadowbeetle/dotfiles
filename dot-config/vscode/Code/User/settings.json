@@ -66,6 +66,10 @@
             {
                 "name": "Vue Green",
                 "value": "#42b883"
+            },
+            {
+                "name": "NestJS red",
+                "value": "#682020"
             }
         ],
         "peacock.affectTabActiveBorder": true,
@@ -88,4 +92,10 @@
         },
         "files.autoSave": "afterDelay",
         "todo-tree.tree.showScanModeButton": false,
+        "vetur.useWorkspaceDependencies": true,
+        "[json]": {
+            "editor.defaultFormatter": "vscode.json-language-features"
+        },
+        "typescript.updateImportsOnFileMove.enabled": "always",
+        "editor.fontFamily": "'Hack', 'monospace', monospace, 'Droid Sans Fallback'",
     }
