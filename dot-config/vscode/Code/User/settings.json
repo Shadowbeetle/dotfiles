@@ -73,16 +73,16 @@
             }
         ],
         "peacock.affectTabActiveBorder": true,
-        "eslint.autoFixOnSave": true,
         "eslint.validate": [
             "javascript",
             "javascriptreact",
-            { "language": "vue", "autoFix": true }
+            "vue",
+            "typescript"
         ],
         "peacock.affectAccentBorders": true,
         "peacock.surpriseMeOnStartup": true,
         "eslint.lintTask.enable": true,
-        "editor.defaultFormatter": "numso.prettier-standard-vscode",
+        "editor.defaultFormatter": "octref.vetur",
         "keyboard.dispatch": "keyCode",
         "[html]": {
             "editor.defaultFormatter": "vscode.html-language-features"
@@ -98,4 +98,8 @@
         },
         "typescript.updateImportsOnFileMove.enabled": "always",
         "editor.fontFamily": "'Hack', 'monospace', monospace, 'Droid Sans Fallback'",
+        "eslint.codeAction.disableRuleComment": {
+        
+        },
+        "diffEditor.ignoreTrimWhitespace": false,
     }
