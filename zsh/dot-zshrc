@@ -1,4 +1,4 @@
-################################################################################
+#############################################################################
 # this zshrc is intended for linux use
 #
 # Because we don't want to commit our secrets to VCS, create
@@ -41,6 +41,9 @@ if ! zplug check --verbose; then
       echo; zplug install
   fi
 fi
+
+# hack on WSL to load plugins
+unsetopt BG_NICE
 # Load all the plugins!!!
 zplug load
 
