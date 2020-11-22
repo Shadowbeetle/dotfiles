@@ -6,6 +6,10 @@
 # you have from there
 #
 ################################################################################
+if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+    tmux attach -t default || tmux new -s default
+fi
+
 LOG_START=`date +%s%N`
 
 # vim 256 color support
