@@ -184,6 +184,10 @@ alias goc="go test -coverprofile cover.out && go tool cover -html=cover.out -o c
 export PATH=$PATH:$HOME/.cargo/bin
 
 ### DEVOPS
+## Generic
+
+export PATH=~/.local/bin:$PATH
+
 ## KUBERNETES
 
 # The next line updates PATH for the Google Cloud SDK.
@@ -194,9 +198,6 @@ alias kc='kubectl'
 ## Docker
 alias up='docker-compose up'
 alias down='docker-compose down'
-
-## AWS
-export PATH=~/.local/bin:$PATH
 
 ### HOME APPLICATIONS
 alias pbcopy='xclip -selection clipboard'
