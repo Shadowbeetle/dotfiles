@@ -2,7 +2,7 @@
 	email = tamas.kadlecsik@gmail.com
 	name = Shadowbeetle
 [core]
-	excludesfile = ~/.gitignore-global
+	excludesfile = /home/nazgul/.gitignore-global
 	autocrlf = input
 [pull]
 	rebase = true
