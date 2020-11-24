@@ -172,6 +172,9 @@ alias npml="npm run lint -- --fix 2> /dev/null"
 alias npmt="npm t 2> /dev/null"
 alias npmlt="npml && npmt"
 
+## GO
+export PATH=$PATH:/usr/local/go/bin
+
 ## Rust
 
 export PATH=$PATH:$HOME/.cargo/bin
