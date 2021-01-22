@@ -137,6 +137,7 @@ Plug 'easymotion/vim-easymotion'    " AceJump like movement
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'pangloss/vim-javascript'      " JavaScript syntax highlighting
+Plug 'elmcast/elm-vim'
 " Plug 'prettier/vim-prettier', {
 "   \ 'do': 'npm install',
 "   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
