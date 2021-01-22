@@ -179,6 +179,11 @@ export PATH=$PATH:/usr/local/go/bin
 
 export PATH=$PATH:$HOME/.cargo/bin
 
+## Ruby
+
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
 ### DEVOPS
 ## Generic
 
