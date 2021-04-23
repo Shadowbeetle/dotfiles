@@ -134,7 +134,7 @@ if [ ! $commands[gem] ]; then
   echo "run sudo pacman -S Ruby to install it"
   echo
 else
-  RUBY_VERSION=$(gem environment | grep PATHS -A 2 | grep home | grep -Eo [0-9]+.[0-9]+.[0-9]+)
+  RUBY_VERSION=$(gem environment | grep PATHS -A 2 | grep home | grep -Eo '[0-9]+.[0-9]+.[0-9]+' | head -n 1)
   export PATH="$PATH:/home/nazgul/.gem/ruby/$RUBY_VERSION/bin"
 fi
 
