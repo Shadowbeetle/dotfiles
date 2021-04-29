@@ -179,10 +179,8 @@ export PATH=$PATH:/usr/local/go/bin
 # Composer
 
 if [ -f /usr/local/bin/composer/composer.phar ]; then
-  export PATH=$PATH:/usr/local/bin/composer/
-
   function composer() {
-    php composer.phar
+    php /usr/local/bin/composer/composer.phar
   }
 else
   echo "go to https://getcomposer.org/download/ to install composer,"
