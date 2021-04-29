@@ -175,6 +175,20 @@ alias npmlt="npml && npmt"
 ## GO
 export PATH=$PATH:/usr/local/go/bin
 
+## PHP
+# Composer
+
+if [ -f /usr/local/bin/composer/composer.phar ]; then
+  export PATH=$PATH:/usr/local/bin/composer/
+
+  function composer() {
+    php composer.phar
+  }
+else
+  echo "go to https://getcomposer.org/download/ to install composer,"
+  echo "then move composer.phar to /usr/local/bin/composer/"
+fi
+
 ## Rust
 
 export PATH=$PATH:$HOME/.cargo/bin
