@@ -173,7 +173,9 @@ export PATH=$PATH:$HOME/.cargo/bin
 ## Ruby
 
 export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+if hash -v rbenv; then
+  eval "$(rbenv init -)"
+fi
 
 ### DEVOPS
 ## Generic
