@@ -17,21 +17,20 @@ export TERM=xterm-256color
 source ~/.zplug/init.zsh
 
 zplug plugins/git, from:oh-my-zsh # git aliases
-zplug plugins/nvm, from:oh-my-zsh # source nvm and add autocmpletion
+# zplug plugins/nvm, from:oh-my-zsh # source nvm and add autocmpletion SLOW
 zplug plugins/autojump, from:oh-my-zsh # add j / autojump
 zplug "lib/completion", from:oh-my-zsh # add directory tab completion chooser
 zplug "lib/directories", from:oh-my-zsh # add directory tab completion chooser
 zplug "lib/history", from:oh-my-zsh # add HISTFILE, HISTSIZE, SAVEHIST and history command config
-# zplug romkatv/powerlevel10k, use:powerlevel10k.zsh-theme
-# zplug denysdovhan/spaceship-prompt, use:spaceship.zsh, from:github, as:theme
+# # zplug romkatv/powerlevel10k, use:powerlevel10k.zsh-theme
+# # zplug denysdovhan/spaceship-prompt, use:spaceship.zsh, from:github, as:theme
 zplug "themes/amuse", from:oh-my-zsh, as:theme
 zplug zsh-users/zsh-autosuggestions # intellisense
 zplug zsh-users/zsh-syntax-highlighting 
-zplug zsh-users/zsh-completions # additional autocompletions to GNU commandss
-zplug felixr/docker-zsh-completion
-zplug vifon/deer, use:deer
-zplug djui/alias-tips
-zplug "nnao45/zsh-kubectl-completion", lazy:on
+# zplug zsh-users/zsh-completions, lazy:true # additional autocompletions to GNU commands SLOW
+zplug felixr/docker-zsh-completion, lazy:true # SLOW
+# zplug djui/alias-tips # SLOW
+zplug "nnao45/zsh-kubectl-completion", lazy:true
 zplug "hlissner/zsh-autopair", defer:2
 
 
@@ -44,7 +43,7 @@ if ! zplug check --verbose; then
 fi
 
 # hack on WSL to load plugins
-unsetopt BG_NICE
+# unsetopt BG_NICE
 # Load all the plugins!!!
 zplug load
 
@@ -80,24 +79,18 @@ else
 fi
 
 # command line file manager
-if [ $commands[ranger] ]; then
-  alias racd='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
-  alias ra='ranger'
-else 
-  echo "install ranger"
-  echo "run 'sudo pacman -S ranger'"
-  echo
-fi
+# 
+# install ranger
+# > sudo pacman -S ranger
+alias racd='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+alias ra='ranger'
 
 # colorized cat
 # http://pygments.org/docs/cmdline/
-if [ $commands[pygmentize] ]; then
-  alias c='pygmentize -O style=emacs -f console256 -g'
-else
-  echo "install pygmentize"
-  echo "run 'pacman -S pygmentize'"
-  echo
-fi
+# 
+# install pygmentize
+# > pacman -S pygmentize
+alias c='pygmentize -O style=emacs -f console256 -g'
 
 # functions
 function killport() {
@@ -124,28 +117,19 @@ fi
 # editor
 export EDITOR="vim"
 
-# tmuxinator
-if [ ! $commands[gem] ]; then
-  echo "Ruby is missing and is needed for tmuxinator"
-  echo "run sudo pacman -S Ruby to install it"
-  echo
-else
-  RUBY_VERSION=$(gem environment | grep PATHS -A 2 | grep home | grep -Eo '[0-9]+.[0-9]+.[0-9]+' | head -n 1)
-  export PATH="$PATH:/home/nazgul/.gem/ruby/$RUBY_VERSION/bin"
-fi
+# # tmuxinator
+# Install ruby for tmuxinator
+# > sudo pacman -S Ruby
+#
+# then install tmuxinator
+# > gem install tmuxinator
+#
+# RUBY_VERSION=$(gem environment | grep PATHS -A 2 | grep home | grep -Eo '[0-9]+.[0-9]+.[0-9]+' | head -n 1)
+# export PATH="$PATH:/home/nazgul/.gem/ruby/$RUBY_VERSION/bin"
 
-if [ ! $commands[tmuxinator] ]; then
-  echo "tmuxinator is missing"
-  echo "run gem gem install tmuxinator"
-  echo
-fi
-
-if [ ! -f /usr/bin/tmuxinator.zsh ]; then
-  echo "autocomplete is missing for tmuxinator"
-  echo "run sudo wget -P /usr/bin/ https://raw.githubusercontent.com/tmuxinator/tmuxinator/master/completion/tmuxinator.zsh"
-  echo "sudo chmod +x /usr/bin/tmuxinator.zsh"
-  echo
-fi
+# install autocomplete for tmuxinator
+# > sudo wget -P /usr/bin/ https://raw.githubusercontent.com/tmuxinator/tmuxinator/master/completion/tmuxinator.zsh
+# > sudo chmod +x /usr/bin/tmuxinator.zsh
 
 ### DEVELOPMENT
 ## NODE.JS
@@ -173,15 +157,14 @@ export PATH=$PATH:/usr/local/go/bin
 
 ## PHP
 # Composer
+#
+# go to https://getcomposer.org/download/ to install composer,
+# then move composer.phar to /usr/local/bin/composer/
 
-if [ -f /usr/local/bin/composer/composer.phar ]; then
-  function composer() {
-    php /usr/local/bin/composer/composer.phar $@
-  }
-else
-  echo "go to https://getcomposer.org/download/ to install composer,"
-  echo "then move composer.phar to /usr/local/bin/composer/"
-fi
+function composer() {
+  php /usr/local/bin/composer/composer.phar $@
+}
+
 
 ## Rust
 
@@ -200,7 +183,7 @@ export PATH=~/.local/bin:$PATH
 ## KUBERNETES
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/google-cloud-sdk/path.zsh.inc"; fi
+# if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/google-cloud-sdk/path.zsh.inc"; fi
 
 alias kc='kubectl'
 
@@ -268,18 +251,16 @@ alias vnotes='vim ~/Dropbox/Notes'
 
 LOG_END=`date +%s%N`
 
-if [ $commands[neofetch] ]; then
-  neofetch
-else 
-  echo "install neofetch to get a nice welcome"
-fi
+# if [ $commands[neofetch] ]; then
+#   neofetch
+# else 
+#   echo "install neofetch to get a nice welcome"
+# fi
 
 echo Startup took $((($LOG_END - $LOG_START) / (1000 * 1000))) milliseconds
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 
 # heroku autocomplete setup
-HEROKU_AC_ZSH_SETUP_PATH=/home/nazgul/.cache/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
+# HEROKU_AC_ZSH_SETUP_PATH=/home/nazgul/.cache/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH; # SLOW
