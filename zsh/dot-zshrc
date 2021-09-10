@@ -17,7 +17,7 @@ export TERM=xterm-256color
 source ~/.zplug/init.zsh
 
 zplug plugins/git, from:oh-my-zsh # git aliases
-# zplug plugins/nvm, from:oh-my-zsh # source nvm and add autocmpletion SLOW
+zplug plugins/nvm, from:oh-my-zsh # source nvm and add autocmpletion SLOW
 zplug plugins/autojump, from:oh-my-zsh # add j / autojump
 zplug "lib/completion", from:oh-my-zsh # add directory tab completion chooser
 zplug "lib/directories", from:oh-my-zsh # add directory tab completion chooser
