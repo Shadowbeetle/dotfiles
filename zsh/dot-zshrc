@@ -14,40 +14,41 @@ export TERM=xterm-256color
 
 ### SHELL
 ## ZSH
-source ~/.zplug/init.zsh
+source ~/.zinit/bin/zinit.zsh
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
 
-zplug plugins/git, from:oh-my-zsh # git aliases
-zplug plugins/nvm, from:oh-my-zsh # source nvm and add autocmpletion SLOW
-zplug plugins/autojump, from:oh-my-zsh # add j / autojump
-zplug "lib/completion", from:oh-my-zsh # add directory tab completion chooser
-zplug "lib/directories", from:oh-my-zsh # add directory tab completion chooser
-zplug "lib/history", from:oh-my-zsh # add HISTFILE, HISTSIZE, SAVEHIST and history command config
-# # zplug romkatv/powerlevel10k, use:powerlevel10k.zsh-theme
-# # zplug denysdovhan/spaceship-prompt, use:spaceship.zsh, from:github, as:theme
-zplug "themes/amuse", from:oh-my-zsh, as:theme
-zplug zsh-users/zsh-autosuggestions # intellisense
-zplug zsh-users/zsh-syntax-highlighting 
-# zplug zsh-users/zsh-completions, lazy:true # additional autocompletions to GNU commands SLOW
-zplug felixr/docker-zsh-completion, lazy:true # SLOW
-# zplug djui/alias-tips # SLOW
-zplug "nnao45/zsh-kubectl-completion", lazy:true
-zplug "hlissner/zsh-autopair", defer:2
+zinit ice from"gh-r" as"program" atload'!eval $(starship init zsh)'
+zinit light starship/starship
 
+zinit for \
+    light-mode  zdharma/history-search-multi-word
 
-# Install plugins if there are plugins that have not been installed
-if ! zplug check --verbose; then
-  printf "Install? [y/N]: "
-  if read -q; then
-      echo; zplug install
-  fi
-fi
+export NVM_LAZY_LOAD=true
+zinit light lukechilds/zsh-nvm
 
-# hack on WSL to load plugins
-# unsetopt BG_NICE
-# Load all the plugins!!!
-zplug load
+zinit ice from"gh-r" as"program" mv"docker* -> docker-compose" bpick"*linux*"
+zinit load docker/compose
 
-COMPLETION_WAITING_DOTS="true"
+zinit snippet OMZP::common-aliases
+zinit snippet OMZP::git
+zinit snippet OMZL::history.zsh
+zinit snippet OMZP::tmux
+zinit snippet OMZP::node
+zinit snippet OMZP::docker-compose
+zinit snippet OMZL::directories.zsh 
+
+zinit load djui/alias-tips
+
+zinit load agkozak/zsh-z
+
+zinit wait lucid light-mode for \
+  atinit"zicompinit; zicdreplay" \
+      zdharma/fast-syntax-highlighting hlissner/zsh-autopair \
+  atload"_zsh_autosuggest_start" \
+      zsh-users/zsh-autosuggestions nnao45/zsh-kubectl-completion \
+  blockf atpull'zinit creinstall -q .' \
+      OMZL::completion.zsh zsh-users/zsh-completions\
 
 # use Vi mode
 bindkey -v
@@ -56,10 +57,8 @@ bindkey -v
 autoload edit-command-line; zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
 
-# ls aliases
-alias ls="ls --color=auto" # colorize output properly
-alias ll="ls -lah"
-alias l="ls -lh"
+# autojump
+alias j="autojump"
 
 # grep coloring
 alias grep="grep --color=auto"
@@ -173,7 +172,7 @@ export PATH=$PATH:$HOME/.cargo/bin
 ## Ruby
 
 export PATH="$HOME/.rbenv/bin:$PATH"
-if hash -v rbenv; then
+if hash -v rbenv > /dev/null; then
   eval "$(rbenv init -)"
 fi
 
@@ -266,3 +265,26 @@ echo Startup took $((($LOG_END - $LOG_START) / (1000 * 1000))) milliseconds
 
 # heroku autocomplete setup
 # HEROKU_AC_ZSH_SETUP_PATH=/home/nazgul/.cache/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH; # SLOW
+
+### Added by Zinit's installer
+if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
+    print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
+    command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
+    command git clone https://github.com/zdharma/zinit "$HOME/.zinit/bin" && \
+        print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
+        print -P "%F{160}▓▒░ The clone has failed.%f%b"
+fi
+
+source "$HOME/.zinit/bin/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+
+# Load a few important annexes, without Turbo
+# (this is currently required for annexes)
+zinit light-mode for \
+    zinit-zsh/z-a-rust \
+    zinit-zsh/z-a-as-monitor \
+    zinit-zsh/z-a-patch-dl \
+    zinit-zsh/z-a-bin-gem-node
+
+### End of Zinit's installer chunk
