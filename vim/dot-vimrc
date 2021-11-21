@@ -122,6 +122,8 @@ augroup END
 "" Plugins
 "" ===================
 call plug#begin('~/.vim/bundle')
+Plug 'christoomey/vim-tmux-navigator'
+
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/rainbow_parentheses.vim'
