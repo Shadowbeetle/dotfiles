@@ -102,4 +102,5 @@
         
         },
         "diffEditor.ignoreTrimWhitespace": false,
+        "workbench.colorTheme": "Default Dark+",
     }
