@@ -50,6 +50,10 @@ zinit wait lucid light-mode for \
   blockf atpull'zinit creinstall -q .' \
       OMZL::completion.zsh zsh-users/zsh-completions\
 
+# Up / Down arrow history search based on already typed command
+bindkey "^[[A" history-beginning-search-backward
+bindkey "^[[B" history-beginning-search-forward
+
 # use Vi mode
 bindkey -v
 
