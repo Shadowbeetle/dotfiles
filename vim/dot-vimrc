@@ -138,21 +138,24 @@ Plug 'tpope/vim-markdown', { 'for': 'markdown' }
 Plug 'easymotion/vim-easymotion'    " AceJump like movement
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'Quramy/tsuquyomi', { 'for': 'typescript' }
+Plug 'HerringtonDarkholme/yats.vim', { 'for': 'typescript' }
 Plug 'pangloss/vim-javascript'      " JavaScript syntax highlighting
+Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
+Plug 'pantharshit00/vim-prisma'
 Plug 'elmcast/elm-vim'
 " Plug 'prettier/vim-prettier', {
 "   \ 'do': 'npm install',
 "   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'dense-analysis/ale'
-Plug 'Raimondi/delimitMate'
+
+Plug 'Raimondi/delimitMate' " autclose brackets
 Plug 'vim-airline/vim-airline'      " vim powerline
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/vim-auto-save'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
-Plug 'HerringtonDarkholme/yats.vim', { 'for': 'typescript' }
-Plug 'Quramy/tsuquyomi', { 'for': 'typescript' }
 Plug 'cespare/vim-toml'
 Plug 'mbbill/undotree'
 Plug 'brooth/far.vim'               " search and replace in multiple files with https://github.com/brooth/far.vim 
