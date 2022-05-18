@@ -139,10 +139,10 @@ Plug 'easymotion/vim-easymotion'    " AceJump like movement
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'Quramy/tsuquyomi', { 'for': 'typescript' }
-Plug 'HerringtonDarkholme/yats.vim', { 'for': 'typescript' }
-Plug 'pangloss/vim-javascript'      " JavaScript syntax highlighting
-Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
+" Plug 'Quramy/tsuquyomi', { 'for': 'typescript' }
+" Plug 'HerringtonDarkholme/yats.vim', { 'for': 'typescript' }
+" Plug 'pangloss/vim-javascript'      " JavaScript syntax highlighting
+" Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 Plug 'pantharshit00/vim-prisma'
 Plug 'elmcast/elm-vim'
 " Plug 'prettier/vim-prettier', {
@@ -208,13 +208,15 @@ augroup END
 " ale
 " ===
 let g:ale_fixers = {
-      \  'javascript': ['prettier'],
-      \  'typescript': ['prettier'],
+      \  'javascript': ['prettier', 'eslint'],
+      \  'typescript': ['prettier', 'eslint'],
       \  'css': ['prettier']
       \  }
 let g:ale_fix_on_save = 1
 let g:ale_linter_aliases = {'typescriptreact': 'typescript'}
 let g:ale_linter_aliases = {'javascriptreact': 'typescript'}
+
+nnoremap <C-S-I> :%!npx prettier --stdin-filepath % <CR><CR>
 
 " CoC
 " ===================
