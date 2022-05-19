@@ -92,6 +92,9 @@ augroup remember_folds
   autocmd BufWinEnter *.go silent! loadview
 augroup END
 
+" map leader to spacebar
+let mapleader = " "
+
 :command WQA wqa
 :command WQa wqa
 :comman Wqa wqa
@@ -125,9 +128,23 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 " copy whole file to X clipboard
 nnoremap yyy :%y+<cr>
 
+" remember the directory where vim was opened from
+function FindSessionDirectory() abort
+  if len(argv()) > 0
+    return fnamemodify(argv()[0], ':p:h')
+  endif
+  return getcwd()
+endfunction!
+let g:session_default_name = FindSessionDirectory()
+
 " CoC
 " ===
 nnoremap <silent> gd <Plug>(coc-definition)
+
+" Coc-prettier
+" ============
+command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
+nnoremap <C-S-I> :Prettier<CR>
 
 " EasyMotion
 " ==========
@@ -152,7 +169,10 @@ imap <c-x><c-k> <plug>(fzf-complete-word)
 imap <c-x><c-l> <plug>(fzf-complete-line)
 imap <c-x><c-f> <plug>(fzf-complete-path)
 nmap <C-p> :GFiles<CR>
-nmap <C-g> :FZF<CR>
+" nmap <C-g> :FZF<CR>
+command! -bang ListFiles call fzf#vim#files(g:session_default_name, fzf#vim#with_preview(), 1)
+nmap <C-g> :ListFiles<CR>
+
 " let g:fzf_layout = { 'down': '20%' }
 
 
