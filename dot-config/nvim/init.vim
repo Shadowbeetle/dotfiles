@@ -1,8 +1,10 @@
 call plug#begin()
 
-Plug 'kyazdani42/rvim-web-devicons' " for file icons
+Plug 'kyazdani42/nvim-web-devicons' " for file icons
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'nvim-lualine/lualine.nvim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
@@ -26,6 +28,10 @@ Plug 'antoinemadec/FixCursorHold.nvim'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'zaki/zazen'
 Plug 'yuttie/hydrangea-vim'
+Plug 'gruvbox-community/gruvbox'
+Plug 'sonph/onehalf', { 'rtp': 'vim' }
+Plug 'gosukiwi/vim-atom-dark'
+Plug 'kyoz/purify', { 'rtp': 'vim' }
 "
 " Aesthetics - Others
 Plug 'junegunn/rainbow_parentheses.vim'
@@ -119,9 +125,9 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 " copy whole file to X clipboard
 nnoremap yyy :%y+<cr>
 
-" FixCursorHold for better performance
-" =============
-let g:cursorhold_updatetime = 100
+" CoC
+" ===
+nnoremap <silent> gd <Plug>(coc-definition)
 
 " EasyMotion
 " ==========
@@ -129,6 +135,10 @@ let g:cursorhold_updatetime = 100
 map  / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
 let g:EasyMotion_smartcase = 1
+
+" FixCursorHold for better performance
+" =============
+let g:cursorhold_updatetime = 100
 
 " These `n` & `N` mappings are optional. You do not have to map `n` & `N` to EasyMotion.
 " Without these mappings, `n` & `N` works fine. (These mappings just provide
@@ -154,5 +164,6 @@ require('lualine-config')
 require('nvim-tree-config')
 EOF
 
-color dracula
+color onehalfdark
+
 set termguicolors
