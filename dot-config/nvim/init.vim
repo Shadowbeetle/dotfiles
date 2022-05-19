@@ -136,6 +136,16 @@ let g:EasyMotion_smartcase = 1
 map  n <Plug>(easymotion-next)
 map  N <Plug>(easymotion-prev)
 
+" Fzf
+" =======
+imap <c-x><c-k> <plug>(fzf-complete-word)
+imap <c-x><c-l> <plug>(fzf-complete-line)
+imap <c-x><c-f> <plug>(fzf-complete-path)
+nmap <C-p> :GFiles<CR>
+nmap <C-g> :FZF<CR>
+" let g:fzf_layout = { 'down': '20%' }
+
+
 " nvim-tree
 nnoremap <leader>m :NvimTreeToggle<CR>
 
