@@ -24,6 +24,10 @@ Plug 'dkarter/bullets.vim'
 Plug 'wellle/context.vim'           " Keeps the current content always visible
 Plug 'antoinemadec/FixCursorHold.nvim'
 
+" Language plugins
+Plug 'pantharshit00/vim-prisma'
+Plug 'jparise/vim-graphql'
+
 " Aesthetics - Colorschemes
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'zaki/zazen'
