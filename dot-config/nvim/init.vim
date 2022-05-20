@@ -5,6 +5,7 @@ Plug 'kyazdani42/nvim-tree.lua'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+Plug 'troydm/zoomwintab.vim'
 
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
