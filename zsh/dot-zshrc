@@ -118,7 +118,7 @@ if [ "$?" = 2 ]; then
 fi
 
 # editor
-export EDITOR="vim"
+export EDITOR="nvim"
 
 # # tmuxinator
 # Install ruby for tmuxinator
@@ -245,14 +245,15 @@ hash -d -- apps='/usr/share/applications/'
 
 hash -d -- dot="$HOME/Projects/src/github.com/Shadowbeetle/dotfiles/"
 alias cdot='code ~/Projects/src/github.com/Shadowbeetle/dotfiles'
-alias vdot='vim ~/Projects/src/github.com/Shadowbeetle/dotfiles'
+alias vdot="$EDITOR ~/Projects/src/github.com/Shadowbeetle/dotfiles"
 
-alias vv='vim ~/.vimrc'
-alias vz='vim ~/.zshrc'
+alias vv="$EDITOR ~/.vimrc"
+alias vn="$EDITOR ~/.config/nvim/init.vim"
+alias vz="$EDITOR ~/.zshrc"
 
 hash -d -- notes="$HOME/Dropbox/Notes/"
 alias cnotes='code ~/Dropbox/Notes'
-alias vnotes='vim ~/Dropbox/Notes'
+alias vnotes="$EDITOR ~/Dropbox/Notes"
 
 LOG_END=`date +%s%N`
 
