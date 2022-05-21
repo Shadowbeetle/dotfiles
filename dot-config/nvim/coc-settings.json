@@ -11,7 +11,8 @@
     "graphql": {
       "command": "graphql-lsp",
       "args": ["server", "-m", "stream"],
-      "filetypes": ["typescript", "javascript", "javascriptreact", "typescriptreact", "graphql"]
+      "filetypes": ["typescript", "javascript", "javascriptreact", "typescriptreact", "graphql"],
+      "trace.server": "verbose"
     }
   }
 }
