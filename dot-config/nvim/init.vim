@@ -162,15 +162,6 @@ map  / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
 let g:EasyMotion_smartcase = 1
 
-" vim-journal
-augroup journal
-  au!
-  autocmd BufNewFile,BufRead *.journal,*.jrnl set filetype=journal
-  " autocmd BufNewFile,BufRead  set filetype=journal
-augroup END
-
-
-
 " FixCursorHold for better performance
 " =============
 let g:cursorhold_updatetime = 100
@@ -193,6 +184,14 @@ nmap <C-g> :ListFiles<CR>
 
 " let g:fzf_layout = { 'down': '20%' }
 
+let g:gruvbox_contrast_dark = "hard"
+
+" vim-journal
+augroup journal
+  au!
+  autocmd BufNewFile,BufRead *.journal,*.jrnl set filetype=journal
+  " autocmd BufNewFile,BufRead  set filetype=journal
+augroup END
 
 " nvim-tree
 nnoremap <leader>m :NvimTreeToggle<CR>
@@ -202,6 +201,6 @@ require('lualine-config')
 require('nvim-tree-config')
 EOF
 
-color onehalfdark
+color gruvbox
 
 set termguicolors
