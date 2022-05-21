@@ -37,6 +37,7 @@ Plug 'gruvbox-community/gruvbox'
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
 Plug 'gosukiwi/vim-atom-dark'
 Plug 'kyoz/purify', { 'rtp': 'vim' }
+Plug 'joshdick/onedark.vim'
 "
 " Aesthetics - Others
 Plug 'junegunn/rainbow_parentheses.vim'
@@ -201,6 +202,6 @@ require('lualine-config')
 require('nvim-tree-config')
 EOF
 
-color gruvbox
+color onedark
 
 set termguicolors
