@@ -162,6 +162,15 @@ map  / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
 let g:EasyMotion_smartcase = 1
 
+" vim-journal
+augroup journal
+  au!
+  autocmd BufNewFile,BufRead *.journal,*.jrnl set filetype=journal
+  " autocmd BufNewFile,BufRead  set filetype=journal
+augroup END
+
+
+
 " FixCursorHold for better performance
 " =============
 let g:cursorhold_updatetime = 100
