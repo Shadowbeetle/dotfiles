@@ -182,6 +182,8 @@ nmap <C-p> :GFiles<CR>
 " nmap <C-g> :FZF<CR>
 command! -bang ListFiles call fzf#vim#files(g:session_default_name, fzf#vim#with_preview(), 1)
 nmap <C-g> :ListFiles<CR>
+command GF GitFiles?
+command Gf GitFiles?
 
 " let g:fzf_layout = { 'down': '20%' }
 
