@@ -146,6 +146,7 @@ let g:session_default_name = FindSessionDirectory()
 " CoC
 " ===
 nnoremap <silent> gd <Plug>(coc-definition)
+nnoremap <silent> <leader>h :call CocActionAsync('doHover')<cr>
 
 " Coc-prettier
 " ============
