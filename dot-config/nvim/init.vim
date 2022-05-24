@@ -60,6 +60,7 @@ set wildignore+=node_modules/**
 set wildignore+=vendor/**
 set wildignore+=package-lock.json
 set number              " turn line numbering on
+set relativenumber
 
 autocmd InsertEnter * :set norelativenumber
 autocmd InsertLeave * :set relativenumber
