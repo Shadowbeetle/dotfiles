@@ -60,6 +60,10 @@ set wildignore+=node_modules/**
 set wildignore+=vendor/**
 set wildignore+=package-lock.json
 set number              " turn line numbering on
+
+autocmd InsertEnter * :set norelativenumber
+autocmd InsertLeave * :set relativenumber
+
 set autochdir           " change directory to currently edited file
 set encoding=utf-8
 set list                " show non printable characters
@@ -140,12 +144,14 @@ function FindSessionDirectory() abort
     return fnamemodify(argv()[0], ':p:h')
   endif
   return getcwd()
-endfunction!
+endfunction
+
 let g:session_default_name = FindSessionDirectory()
 
 " CoC
 " ===
 nnoremap <silent> gd <Plug>(coc-definition)
+nnoremap <silent> gi <Plug>(coc-implementation)
 nnoremap <silent> <leader>h :call CocActionAsync('doHover')<cr>
 
 " Coc-prettier
