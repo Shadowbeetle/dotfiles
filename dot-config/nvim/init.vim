@@ -28,6 +28,7 @@ Plug 'antoinemadec/FixCursorHold.nvim'
 " Language plugins
 Plug 'pantharshit00/vim-prisma'
 Plug 'jparise/vim-graphql'
+Plug 'elixir-editors/vim-elixir'
 
 " Aesthetics - Colorschemes
 Plug 'dracula/vim', { 'as': 'dracula' }
