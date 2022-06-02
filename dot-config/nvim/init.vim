@@ -207,6 +207,7 @@ augroup END
 
 " nvim-tree
 nnoremap <leader>m :NvimTreeToggle<CR>
+nnoremap <leader>ff :NvimTreeFindFile<cr>
 
 lua << EOF
 require('lualine-config')
