@@ -204,6 +204,9 @@ augroup journal
   " autocmd BufNewFile,BufRead  set filetype=journal
 augroup END
 
+" markdown
+let g:markdown_syntax_conceal = 0
+
 " vim-markdown-folding
 augroup markdown
   autocmd FileType markdown set foldexpr=NestedMarkdownFolds() 
