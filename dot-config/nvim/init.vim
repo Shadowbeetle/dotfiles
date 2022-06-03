@@ -29,6 +29,7 @@ Plug 'antoinemadec/FixCursorHold.nvim'
 Plug 'pantharshit00/vim-prisma'
 Plug 'jparise/vim-graphql'
 Plug 'elixir-editors/vim-elixir'
+Plug 'masukomi/vim-markdown-folding'
 
 " Aesthetics - Colorschemes
 Plug 'dracula/vim', { 'as': 'dracula' }
@@ -194,8 +195,6 @@ nmap <C-g> :ListFiles<CR>
 command GF GitFiles?
 command Gf GitFiles?
 
-" let g:fzf_layout = { 'down': '20%' }
-
 let g:gruvbox_contrast_dark = "hard"
 
 " vim-journal
@@ -204,6 +203,16 @@ augroup journal
   autocmd BufNewFile,BufRead *.journal,*.jrnl set filetype=journal
   " autocmd BufNewFile,BufRead  set filetype=journal
 augroup END
+
+" vim-markdown-folding
+augroup markdown
+  autocmd FileType markdown set foldexpr=NestedMarkdownFolds() 
+augroup END
+
+set nocompatible
+if has("autocmd")
+  filetype plugin indent on
+endif
 
 " nvim-tree
 nnoremap <leader>m :NvimTreeToggle<CR>
