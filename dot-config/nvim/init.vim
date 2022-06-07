@@ -4,6 +4,7 @@ Plug 'kyazdani42/nvim-web-devicons' " for file icons
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'github/copilot.vim'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'troydm/zoomwintab.vim'
 
