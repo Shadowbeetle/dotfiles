@@ -174,6 +174,14 @@ map  / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
 let g:EasyMotion_smartcase = 1
 
+" vim-elixir
+" ==========
+augroup elixir
+  autocmd!
+  autocmd BufEnter *.heex set filetype=eelixir "for some reason it does not detect *.heex as documented
+augroup END
+
+
 " FixCursorHold for better performance
 " =============
 let g:cursorhold_updatetime = 100
