@@ -120,6 +120,11 @@ fi
 # editor
 export EDITOR="nvim"
 
+if [ -d /snap/bin/ ]
+then
+  PATH=$PATH:/snap/bin
+fi
+
 # # tmuxinator
 # Install ruby for tmuxinator
 # > sudo pacman -S Ruby
