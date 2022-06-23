@@ -42,6 +42,8 @@ zinit load djui/alias-tips
 
 zinit load agkozak/zsh-z
 
+zinit load wfxr/forgit
+
 zinit wait lucid light-mode for \
   atinit"zicompinit; zicdreplay" \
       zdharma-continuum/fast-syntax-highlighting hlissner/zsh-autopair \
