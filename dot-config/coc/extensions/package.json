@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "coc-deno": ">=3.9.5",
+    "coc-elixir": ">=0.7.0",
+    "coc-ltex": ">=13.1.0",
+    "coc-prettier": ">=9.3.0",
+    "coc-prisma": ">=0.11.0",
+    "coc-tsserver": ">=1.10.4",
+    "coc-vimlsp": ">=0.12.8"
+  }
+}
