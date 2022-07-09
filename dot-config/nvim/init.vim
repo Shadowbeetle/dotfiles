@@ -242,6 +242,9 @@ require('nvim-tree-config')
 require('treesitter-config')
 EOF
 
+" show quotes in JSON files
+set conceallevel=0
+
 color onedark
 
 set termguicolors
