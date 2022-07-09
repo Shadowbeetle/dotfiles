@@ -4,6 +4,8 @@ Plug 'kyazdani42/nvim-web-devicons' " for file icons
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter-refactor'
 Plug 'github/copilot.vim'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'troydm/zoomwintab.vim'
@@ -237,6 +239,7 @@ nnoremap <leader>ff :NvimTreeFindFile<cr>
 lua << EOF
 require('lualine-config')
 require('nvim-tree-config')
+require('treesitter-config')
 EOF
 
 color onedark

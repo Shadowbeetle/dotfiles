@@ -2,10 +2,12 @@
   "dependencies": {
     "coc-deno": ">=3.9.5",
     "coc-elixir": ">=0.7.0",
+    "coc-json": ">=1.4.2",
     "coc-ltex": ">=13.1.0",
     "coc-prettier": ">=9.3.0",
     "coc-prisma": ">=0.11.0",
-    "coc-tsserver": ">=1.10.4",
+    "coc-sumneko-lua": ">=0.0.31",
+    "coc-tsserver": ">=1.10.5",
     "coc-vimlsp": ">=0.12.8"
   }
 }
