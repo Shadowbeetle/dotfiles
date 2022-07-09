@@ -14,6 +14,13 @@
       "filetypes": ["typescript", "javascript", "javascriptreact", "typescriptreact", "graphql"],
       "trace.server": "verbose"
     },
+    "astro": {
+      "filetypes": ["astro"],
+      "command": "/home/nazgul/.nvm/versions/node/v16.14.0/lib/node_modules/@astrojs/language-server/bin/nodeServer.js",
+      "args": ["--stdio"],
+      "rootPatterns": ["package.json", "astro.config.mjs", ".git"],
+      "trace.server": "verbose"
+    },
     "lua": {
       "filetypes": [
         "lua"
