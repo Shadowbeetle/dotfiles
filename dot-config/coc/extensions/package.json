@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@yaegassy/coc-ansible": ">=0.11.1",
     "coc-deno": ">=3.9.5",
     "coc-elixir": ">=0.7.0",
     "coc-json": ">=1.4.2",
