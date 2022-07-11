@@ -16,44 +16,23 @@
     },
     "astro": {
       "filetypes": ["astro"],
-      "command": "/home/nazgul/.nvm/versions/node/v16.14.0/lib/node_modules/@astrojs/language-server/bin/nodeServer.js",
+      "command": "~/.nvm/versions/node/v16.14.0/lib/node_modules/@astrojs/language-server/bin/nodeServer.js",
       "args": ["--stdio"],
       "rootPatterns": ["package.json", "astro.config.mjs", ".git"],
       "trace.server": "verbose"
-    },
-    "lua": {
-      "filetypes": [
-        "lua"
-      ],
-      "command": "lua-language-server",
-      "settings": {
-        "Lua": {
-          "workspace": {
-            "library": {
-              "/usr/share/nvim/runtime/lua": true,
-              "/usr/share/nvim/runtime/lua/vim": true,
-              "/usr/share/nvim/runtime/lua/vim/lsp": true
-            },
-            "maxPreload": 2000,
-            "preloadFileSize": 1000
-          },
-          "diagnostics": {
-            "globals": [
-              "vim",
-              "hs",
-              "it",
-              "describe",
-              "before_each",
-              "after_each"
-            ]
-          }
-        }
-      }
     }
   },
   "ltex.additionalRules.languageModel": "C:\\MyService\\ngrams-en",
   "ltex.additionalRules.motherTongue": "en-US",
   "ltex.trace.server": "verbose",
-  "Lua.telemetry.enable": false
+  "Lua.telemetry.enable": false,
+  "Lua.diagnostics.globals": [
+    "vim",
+    "hs",
+    "it",
+    "describe",
+    "before_each",
+    "after_each"
+  ]
 }
 
