@@ -18,7 +18,8 @@ Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'         " Comments
 Plug 'tpope/vim-repeat'             " Make cs ds yss repeatable
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'mhinz/vim-signify'            " nicer than gitgutter
+" Plug 'mhinz/vim-signify'            " nicer than gitgutter
+Plug 'airblade/vim-gitgutter'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
