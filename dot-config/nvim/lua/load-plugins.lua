@@ -48,7 +48,7 @@ return require("packer").startup({
     -- Language plugins
     use({'pantharshit00/vim-prisma'})
     use({'jparise/vim-graphql'})
-    use({'elixir-editors/vim-elixir'})
+    -- use({'elixir-editors/vim-elixir'})
     use({'masukomi/vim-markdown-folding'})
 
     -- Aesthetics - Colorschemes
