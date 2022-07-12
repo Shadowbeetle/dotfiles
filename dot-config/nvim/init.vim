@@ -1,58 +1,7 @@
-call plug#begin()
-
-Plug 'kyazdani42/nvim-web-devicons' " for file icons
-Plug 'kyazdani42/nvim-tree.lua'
-Plug 'nvim-lualine/lualine.nvim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'nvim-treesitter/nvim-treesitter-refactor'
-Plug 'github/copilot.vim'
-Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-Plug 'troydm/zoomwintab.vim'
-Plug 'dstein64/nvim-scrollview'
-
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-abolish'
-Plug 'tpope/vim-commentary'         " Comments
-Plug 'tpope/vim-repeat'             " Make cs ds yss repeatable
-Plug 'christoomey/vim-tmux-navigator'
-" Plug 'mhinz/vim-signify'            " nicer than gitgutter
-Plug 'airblade/vim-gitgutter'
-Plug 'jiangmiao/auto-pairs'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'ibhagwan/fzf-lua', {'branch': 'main'}
-Plug 'Yggdroot/indentLine'
-Plug 'chrisbra/Colorizer'
-Plug 'easymotion/vim-easymotion'    " AceJump like movement
-Plug 'dkarter/bullets.vim'
-Plug 'wellle/context.vim'           " Keeps the current content always visible
-Plug 'antoinemadec/FixCursorHold.nvim'
-
-" Language plugins
-Plug 'pantharshit00/vim-prisma'
-Plug 'jparise/vim-graphql'
-Plug 'elixir-editors/vim-elixir'
-Plug 'masukomi/vim-markdown-folding'
-
-" Aesthetics - Colorschemes
-Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'zaki/zazen'
-Plug 'yuttie/hydrangea-vim'
-Plug 'gruvbox-community/gruvbox'
-Plug 'sonph/onehalf', { 'rtp': 'vim' }
-Plug 'gosukiwi/vim-atom-dark'
-Plug 'kyoz/purify', { 'rtp': 'vim' }
-Plug 'joshdick/onedark.vim'
-"
-" Aesthetics - Others
-Plug 'junegunn/rainbow_parentheses.vim'
-Plug 'junegunn/limelight.vim'
-Plug 'junegunn/vim-journal'
-
-call plug#end()
+lua << EOF
+require('options')
+require('plugins')
+EOF
 
 filetype on
 filetype plugin on
