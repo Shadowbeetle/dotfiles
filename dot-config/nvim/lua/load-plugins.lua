@@ -42,7 +42,6 @@ return require("packer").startup({
     use({'chrisbra/Colorizer'})
     use({'easymotion/vim-easymotion'}) -- AceJump like movement
     use({'dkarter/bullets.vim'})
-    use({'wellle/context.vim'}) -- Keeps the current content always visible
     use({'antoinemadec/FixCursorHold.nvim'})
 
     -- Language plugins

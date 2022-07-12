@@ -15,10 +15,6 @@ EOF
 command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
 nnoremap <C-S-I> :Prettier<CR>
 
-" context.vim
-" ===========
-let g:context_enabled=0 " enabl context on demand
-
 " EasyMotion
 " ==========
 " n-character search 
