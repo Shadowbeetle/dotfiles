@@ -1,67 +1,12 @@
 lua << EOF
 require('options')
 require('plugins')
+
+vim.cmd('color onedark')
+
+-- show quotes in JSON files
+vim.cmd('set conceallevel=0') -- for some reason it only works when manually sourced and as a command
 EOF
-
-filetype on
-filetype plugin on
-filetype indent on
-syntax enable
-syntax on
-
-set nohlsearch          " not neaded with easy-motion
-set tabstop=2           " when indenting with '>', use 2 spaces width
-set shiftwidth=2        " On pressing tab, insert 2 spaces
-set expandtab           " use spaces instead of tabs
-set wildignore+=node_modules/**
-set wildignore+=vendor/**
-set wildignore+=package-lock.json
-set number              " turn line numbering on
-set relativenumber
-
-autocmd InsertEnter * :set norelativenumber
-autocmd InsertLeave * :set relativenumber
-
-set autochdir           " change directory to currently edited file
-set encoding=utf-8
-set list                " show non printable characters
-set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,space:·
-set cursorcolumn        " highlight current column
-set cursorline
-augroup cline
-  au!
-  au InsertEnter * set nocursorcolumn
-  au InsertEnter * set nocursorline
-  au InsertEnter * set nolist
-  au InsertLeave * set cursorcolumn
-  au InsertLeave * set cursorline
-  au InsertLeave * set list
-augroup END
-
-set splitbelow
-set splitright
-set mouse=a             " use the mouse in tmux
-
-set swapfile
-set directory^=~/.vim/swap//
-" protect against crash-during-write
-set writebackup
-" but do not persist backup after successful write
-set nobackup
-" use rename-and-write-new method whenever safe
-set backupcopy=auto
-" persist the undo tree for each file
-set undofile
-set undodir^=~/.vim/undo//
-set foldmethod=indent
-augroup remember_folds
-  autocmd!
-  autocmd BufWinLeave *.go mkview
-  autocmd BufWinEnter *.go silent! loadview
-augroup END
-
-" map leader to spacebar
-let mapleader = " "
 
 :command WQA wqa
 :command WQa wqa
@@ -177,11 +122,6 @@ augroup markdown
   autocmd FileType markdown set formatoptions+=a 
 augroup END
 
-set nocompatible
-if has("autocmd")
-  filetype plugin indent on
-endif
-
 " nvim-tree
 nnoremap <leader>m :NvimTreeToggle<CR>
 nnoremap <leader>ff :NvimTreeFindFile<cr>
@@ -192,9 +132,6 @@ require('nvim-tree-config')
 require('treesitter-config')
 EOF
 
-" show quotes in JSON files
-set conceallevel=0
+" set conceallevel=0
 
-color onedark
 
-set termguicolors
