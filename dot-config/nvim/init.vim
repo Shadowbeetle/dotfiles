@@ -1,6 +1,7 @@
 lua << EOF
 require('options')
-require('plugins')
+require('load-plugins')
+require("plug-opts")
 
 vim.cmd('color onedark')
 
@@ -126,11 +127,6 @@ augroup END
 nnoremap <leader>m :NvimTreeToggle<CR>
 nnoremap <leader>ff :NvimTreeFindFile<cr>
 
-lua << EOF
-require('lualine-config')
-require('nvim-tree-config')
-require('treesitter-config')
-EOF
 
 " set conceallevel=0
 
