@@ -30,9 +30,6 @@ augroup elixir
 augroup END
 
 
-" FixCursorHold for better performance
-" =============
-let g:cursorhold_updatetime = 100
 
 " These `n` & `N` mappings are optional. You do not have to map `n` & `N` to EasyMotion.
 " Without these mappings, `n` & `N` works fine. (These mappings just provide
