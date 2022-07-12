@@ -10,12 +10,6 @@ vim.cmd('color onedark')
 vim.cmd('set conceallevel=0') -- for some reason it only works when manually sourced and as a command
 EOF
 
-" CoC
-" ===
-" nnoremap <silent> gd <Plug>(coc-definition)
-" nnoremap <silent> gi <Plug>(coc-implementation)
-" nnoremap <silent> <leader>h :call CocActionAsync('doHover')<cr>
-
 " Coc-prettier
 " ============
 command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument

@@ -1,5 +1,4 @@
 vim.g.mapleader = " "
-
 -- Typo protector lvl: 99999
 vim.api.nvim_create_user_command('E', 'e<bang> <args>', {
   bang = true,
