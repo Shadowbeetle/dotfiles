@@ -1,7 +1,8 @@
 lua << EOF
 require('options')
 require('load-plugins')
-require("plug-opts")
+require('plug-opts')
+require('keybindings')
 
 vim.cmd('color onedark')
 
@@ -9,54 +10,11 @@ vim.cmd('color onedark')
 vim.cmd('set conceallevel=0') -- for some reason it only works when manually sourced and as a command
 EOF
 
-:command WQA wqa
-:command WQa wqa
-:comman Wqa wqa
-:command WQ wq
-:command Wq wq
-:command WA wa
-:command Wa wa
-:command QA qa
-:command Qa qa
-:command W w
-:command Q q
-" edit vimrc in a different split screen
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-" source vimrc
-nnoremap <leader>sv :source $MYVIMRC<cr>
-" show/hid\l non printable characters
-nnoremap <leader>ss :set list!<cr>
-" specify file to be diffed against the currently open one
-nnoremap <leader>df :vert diffsplit 
-
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
-
-nnoremap yyy :%y+<cr> " copy whole file to X clipboard
-
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-nnoremap <leader>sv :source $MYVIMRC<cr>
-
-" copy whole file to X clipboard
-nnoremap yyy :%y+<cr>
-
-" remember the directory where vim was opened from
-function FindSessionDirectory() abort
-  if len(argv()) > 0
-    return fnamemodify(argv()[0], ':p:h')
-  endif
-  return getcwd()
-endfunction
-
-let g:session_default_name = FindSessionDirectory()
-
 " CoC
 " ===
-nnoremap <silent> gd <Plug>(coc-definition)
-nnoremap <silent> gi <Plug>(coc-implementation)
-nnoremap <silent> <leader>h :call CocActionAsync('doHover')<cr>
+" nnoremap <silent> gd <Plug>(coc-definition)
+" nnoremap <silent> gi <Plug>(coc-implementation)
+" nnoremap <silent> <leader>h :call CocActionAsync('doHover')<cr>
 
 " Coc-prettier
 " ============
