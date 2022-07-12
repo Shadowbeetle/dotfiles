@@ -1,5 +1,4 @@
 vim.opt.autoread = true
-vim.g.mapleader = " "
 vim.opt.hidden = true
 vim.opt.undofile = true
 vim.opt.title = true -- Set title of the window
