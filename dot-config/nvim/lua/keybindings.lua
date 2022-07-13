@@ -97,11 +97,11 @@ vim.api.nvim_set_keymap('n', '<leader>sv', ':source $MYVIMRC<cr>', { noremap = t
 -- Use nvim as pager in case I'd forget that Fzf probably has a searchable list for that
 local function pageInVim (argsTable)
   local command = argsTable.args
-  vim.api.nvim_command('redir @x')
+  vim.api.nvim_command('redir @m')
   vim.api.nvim_command("silent " .. command)
   vim.api.nvim_command('redir END')
   vim.api.nvim_command('new')
-  vim.api.nvim_command('put x')
+  vim.api.nvim_command('put m')
 end
 
 vim.api.nvim_create_user_command('PageInVim', pageInVim, {
