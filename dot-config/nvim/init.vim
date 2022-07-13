@@ -31,16 +31,6 @@ augroup END
 
 " Fzf
 " =======
-imap <c-x><c-k> <plug>(fzf-complete-word)
-imap <c-x><c-l> <plug>(fzf-complete-line)
-imap <c-x><c-f> <plug>(fzf-complete-path)
-" nmap <C-p> :GFiles<CR>
-nmap <C-p> :FzfLua git_files<CR>
-" nmap <C-g> :FZF<CR>
-command! -bang ListFiles call fzf#vim#files(g:session_default_name, fzf#vim#with_preview(), 1)
-nmap <C-g> :ListFiles<CR>
-command GF FzfLua git_status
-command Gf FzfLua git_status
 
 let g:gruvbox_contrast_dark = "hard"
 
