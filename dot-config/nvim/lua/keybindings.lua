@@ -64,14 +64,7 @@ vim.api.nvim_set_keymap('n', '<Leader>a', 'ggVG', { noremap = true, silent = tru
 vim.api.nvim_set_keymap('n', 'yyy', ':%y+<cr>', { noremap = true })
 
 -----------------------------------------------------------------------------------------------------------------------
-local function changeToCurrentBufferDir ()
-  local path = require('path')
-  local bufPath = vim.api.nvim_buf_get_name(0)
-  local bufDir = path.dirname(bufPath)
-  vim.cmd('chdir ' .. bufDir)
-end
-
-vim.api.nvim_create_user_command('ChangeToCurrentBufferDir', changeToCurrentBufferDir, {
+vim.api.nvim_create_user_command('ChangeToCurrentBufferDir', 'lcd %:p:h', { -- %: current buffer :p: path :h: "head" = dirname
   bang = true
 })
 
@@ -79,11 +72,10 @@ vim.api.nvim_set_keymap('n', '<leader>cd', ':ChangeToCurrentBufferDir<cr>', { no
 -----------------------------------------------------------------------------------------------------------------------
 -- Edit and source .vimrc / init.vim / init.lua
 local function openVimrcTab ()
-  local path = require('path')
-  local vimrcPath = os.getenv('MYVIMRC')
-  local vimrcDir = path.dirname(vimrcPath)
-  vim.cmd('tabnew ' .. vimrcPath)
-  vim.cmd('chdir ' .. vimrcDir)
+  vim.cmd[[ 
+    tabnew $MYVIMRC
+    lcd %:p:h
+  ]] -- %: current buffer :p: path :h: "head" = dirname
 end
 
 vim.api.nvim_create_user_command('OpenVimrcTab', openVimrcTab, {
@@ -99,9 +91,11 @@ local function pageInVim (argsTable)
   local command = argsTable.args
   vim.api.nvim_command('redir @m')
   vim.api.nvim_command("silent " .. command)
-  vim.api.nvim_command('redir END')
-  vim.api.nvim_command('new')
-  vim.api.nvim_command('put m')
+  vim.api.nvim_command([[
+    redir END
+    new
+    put m
+  ]])
 end
 
 vim.api.nvim_create_user_command('PageInVim', pageInVim, {
