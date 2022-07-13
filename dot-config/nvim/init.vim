@@ -19,18 +19,6 @@ EOF
 "   autocmd BufEnter *.heex set filetype=eelixir "for some reason it does not detect *.heex as documented
 " augroup END
 
-" Fzf
-" =======
-
-let g:gruvbox_contrast_dark = "hard"
-
-" vim-journal
-augroup journal
-  au!
-  autocmd BufNewFile,BufRead *.journal,*.jrnl set filetype=journal
-  " autocmd BufNewFile,BufRead  set filetype=journal
-augroup END
-
 " markdown
 let g:markdown_syntax_conceal = 0
 
