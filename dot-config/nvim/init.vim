@@ -1,8 +1,8 @@
 lua << EOF
 require('options')
 require('load-plugins')
-require('plug-opts')
 require('keybindings')
+require('plug-opts')
 
 vim.cmd('color onedark')
 
