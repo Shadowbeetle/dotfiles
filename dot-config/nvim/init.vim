@@ -19,13 +19,4 @@ EOF
 "   autocmd BufEnter *.heex set filetype=eelixir "for some reason it does not detect *.heex as documented
 " augroup END
 
-" markdown
-let g:markdown_syntax_conceal = 0
-
-" vim-markdown-folding
-augroup markdown
-  autocmd FileType markdown set foldexpr=NestedMarkdownFolds() 
-  autocmd FileType markdown set formatoptions+=a 
-augroup END
-
 
