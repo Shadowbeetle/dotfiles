@@ -43,11 +43,4 @@ augroup markdown
   autocmd FileType markdown set formatoptions+=a 
 augroup END
 
-" nvim-tree
-nnoremap <leader>m :NvimTreeToggle<CR>
-nnoremap <leader>ff :NvimTreeFindFile<cr>
-
-
-" set conceallevel=0
-
 
