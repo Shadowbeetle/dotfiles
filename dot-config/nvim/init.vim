@@ -3,6 +3,7 @@ require('options')
 require('load-plugins')
 require('keybindings')
 require('plug-opts')
+require('ls')
 
 vim.cmd('color onedark')
 
@@ -10,17 +11,13 @@ vim.cmd('color onedark')
 vim.cmd('set conceallevel=0') -- for some reason it only works when manually sourced and as a command
 EOF
 
-" Coc-prettier
-" ============
-command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
-nnoremap <C-S-I> :Prettier<CR>
 
 " vim-elixir
 " ==========
-augroup elixir
-  autocmd!
-  autocmd BufEnter *.heex set filetype=eelixir "for some reason it does not detect *.heex as documented
-augroup END
+" augroup elixir
+"   autocmd!
+"   autocmd BufEnter *.heex set filetype=eelixir "for some reason it does not detect *.heex as documented
+" augroup END
 
 " Fzf
 " =======
