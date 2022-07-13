@@ -63,7 +63,33 @@ vim.api.nvim_set_keymap('n', '<C-l>', '<C-w>l', { noremap = true, silent = true 
 vim.api.nvim_set_keymap('n', '<Leader>a', 'ggVG', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'yyy', ':%y+<cr>', { noremap = true })
 
--- Edit .vimrc / init.vim / init.lua
-vim.api.nvim_set_keymap('n', '<leader>ev', ':vsplit $MYVIMRC<cr>', { noremap = true, silent = true })
+-----------------------------------------------------------------------------------------------------------------------
+local function changeToCurrentBufferDir ()
+  local path = require('path')
+  local bufPath = vim.api.nvim_buf_get_name(0)
+  local bufDir = path.dirname(bufPath)
+  vim.cmd('chdir ' .. bufDir)
+end
+
+vim.api.nvim_create_user_command('ChangeToCurrentBufferDir', changeToCurrentBufferDir, {
+  bang = true
+})
+
+vim.api.nvim_set_keymap('n', '<leader>cd', ':ChangeToCurrentBufferDir<cr>', { noremap = true, silent = true })
+-----------------------------------------------------------------------------------------------------------------------
+-- Edit and source .vimrc / init.vim / init.lua
+local function openVimrcTab ()
+  local path = require('path')
+  local vimrcPath = os.getenv('MYVIMRC')
+  local vimrcDir = path.dirname(vimrcPath)
+  vim.cmd('tabnew ' .. vimrcPath)
+  vim.cmd('chdir ' .. vimrcDir)
+end
+
+vim.api.nvim_create_user_command('OpenVimrcTab', openVimrcTab, {
+  bang = true
+})
+
+vim.api.nvim_set_keymap('n', '<leader>ev', ':OpenVimrcTab<cr>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>sv', ':source $MYVIMRC<cr>', { noremap = true })
 
