@@ -29,9 +29,6 @@ augroup elixir
   autocmd BufEnter *.heex set filetype=eelixir "for some reason it does not detect *.heex as documented
 augroup END
 
-
-
-
 " Fzf
 " =======
 imap <c-x><c-k> <plug>(fzf-complete-word)
