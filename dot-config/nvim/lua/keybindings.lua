@@ -93,3 +93,20 @@ vim.api.nvim_create_user_command('OpenVimrcTab', openVimrcTab, {
 vim.api.nvim_set_keymap('n', '<leader>ev', ':OpenVimrcTab<cr>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>sv', ':source $MYVIMRC<cr>', { noremap = true })
 
+-----------------------------------------------------------------------------------------------------------------------
+-- Use nvim as pager in case I'd forget that Fzf probably has a searchable list for that
+local function pageInVim (argsTable)
+  local command = argsTable.args
+  vim.api.nvim_command('redir @x')
+  vim.api.nvim_command("silent " .. command)
+  vim.api.nvim_command('redir END')
+  vim.api.nvim_command('new')
+  vim.api.nvim_command('put x')
+end
+
+vim.api.nvim_create_user_command('PageInVim', pageInVim, {
+  nargs = 1,
+  bang = true,
+  complete = "command"
+})
+
