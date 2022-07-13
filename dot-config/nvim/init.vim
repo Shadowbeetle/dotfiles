@@ -15,13 +15,6 @@ EOF
 command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
 nnoremap <C-S-I> :Prettier<CR>
 
-" EasyMotion
-" ==========
-" n-character search 
-map  / <Plug>(easymotion-sn)
-omap / <Plug>(easymotion-tn)
-let g:EasyMotion_smartcase = 1
-
 " vim-elixir
 " ==========
 augroup elixir
