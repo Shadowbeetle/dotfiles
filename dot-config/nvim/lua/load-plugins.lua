@@ -3,6 +3,10 @@ return require("packer").startup({
     -- Packer can manage itself
     use('wbthomason/packer.nvim')
 
+    -- Better profiling
+    use{'dstein64/vim-startuptime'}
+
+
     use({'kyazdani42/nvim-tree.lua', requires = {'kyazdani42/nvim-web-devicons'}})
     use({'nvim-lualine/lualine.nvim', requires = {'kyazdani42/nvim-web-devicons'}})
     use({'neoclide/coc.nvim', branch = 'release'})
