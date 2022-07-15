@@ -7,7 +7,7 @@
     "coc-ltex": ">=13.1.0",
     "coc-prettier": ">=9.3.0",
     "coc-prisma": ">=0.11.0",
-    "coc-pyright": ">=1.1.255",
+    "coc-pyright": ">=1.1.260",
     "coc-sumneko-lua": ">=0.0.31",
     "coc-tsserver": ">=1.10.5",
     "coc-vimlsp": ">=0.12.8"
