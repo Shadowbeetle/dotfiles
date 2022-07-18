@@ -97,6 +97,10 @@ alias ra='ranger'
 # > pacman -S pygmentize
 alias c='pygmentize -O style=emacs -f console256 -g'
 
+alias urlencode='python -c "import urllib.parse, sys; print(urllib.parse.quote(sys.argv[1] if len(sys.argv) > 1 else sys.stdin.read()[0:-1]))"'
+alias urldecode='python -c "import urllib.parse, sys; print(urllib.parse.unquote(sys.argv[1] if len(sys.argv) > 1 else sys.stdin.read()[0:-1]))"'
+
+
 # functions
 function killport() {
     fuser -k $1/tcp
