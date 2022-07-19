@@ -12,7 +12,25 @@ require("nvim-treesitter.configs").setup({
 	indent = {
 		enable = true,
 	},
-  -- provided by the nvim-treesitter/nvim-treesitter-refactor
+  -- provided by the p00f/nvim-ts-rainbow plugin
+  rainbow = {
+    enable = true,
+    -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
+    extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
+    max_file_lines = nil, -- Do not enable for files with more than n lines, int
+    colors = {
+      "#FFFFFF",
+      "#eb9e6c",
+      "#b5f797",
+      "#fa5cf5",
+      "#96f1f2",
+      "#faf86e",
+      "#f283b6",
+    }
+    -- colors = {}, -- table of hex strings
+    -- termcolors = {} -- table of colour name strings
+  },
+  -- provided by the nvim-treesitter/nvim-treesitter-refactor plugin
   refactor = {
     highlight_definitions = {
       enable = true,

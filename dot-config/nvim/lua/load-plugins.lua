@@ -12,6 +12,7 @@ return require("packer").startup({
     use({'neoclide/coc.nvim', branch = 'release'})
     use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'})
     use({'nvim-treesitter/nvim-treesitter-refactor'})
+    use({'p00f/nvim-ts-rainbow'})
     use({'github/copilot.vim'})
     use({'mg979/vim-visual-multi', branch = 'master'})
     use({'troydm/zoomwintab.vim'})
@@ -43,7 +44,8 @@ return require("packer").startup({
     use({"itchyny/vim-highlighturl", event = "VimEnter"}) -- Highlight URLs inside vim
     use({"bronson/vim-visual-star-search", event = "VimEnter"}) -- Better star search
     use({'Yggdroot/indentLine'})
-    use({'chrisbra/Colorizer'})
+    -- use({'chrisbra/Colorizer'})
+    use({'norcalli/nvim-colorizer.lua'})
     use({'easymotion/vim-easymotion'}) -- AceJump like movement
     use({'dkarter/bullets.vim'})
     use({'antoinemadec/FixCursorHold.nvim'})
