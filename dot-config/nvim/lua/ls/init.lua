@@ -1,3 +1,4 @@
+require("ls.astro")
 require("ls.coc")
 require("ls.journal")
 require("ls.markdown")
