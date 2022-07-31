@@ -38,6 +38,7 @@ return require("packer").startup({
     use({"Raimondi/delimitMate", event = "InsertEnter"}) -- Autopair characters and do blocks
     use({"christoomey/vim-tmux-navigator", event = "VimEnter"})
     use({"airblade/vim-gitgutter", event = "VimEnter"})
+    use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
     -- use({"junegunn/fzf", event = "VimEnter"})
     -- use({"junegunn/fzf.vim", event = "VimEnter"})
     use({'ibhagwan/fzf-lua', branch = 'main', requires = {'junegunn/fzf', 'junegunn/fzf.vim'}})
