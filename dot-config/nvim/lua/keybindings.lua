@@ -83,7 +83,7 @@ vim.api.nvim_create_user_command('OpenVimrcTab', openVimrcTab, {
 })
 
 vim.api.nvim_set_keymap('n', '<leader>ev', ':OpenVimrcTab<cr>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>sv', ':source $MYVIMRC<cr>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>sv', ':luafile $MYVIMRC<cr>', { noremap = true })
 
 -----------------------------------------------------------------------------------------------------------------------
 -- Use nvim as pager in case I'd forget that Fzf probably has a searchable list for that
