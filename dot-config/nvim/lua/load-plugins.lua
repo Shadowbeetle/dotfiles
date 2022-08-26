@@ -13,7 +13,7 @@ return require("packer").startup({
     use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'})
     use({'nvim-treesitter/nvim-treesitter-refactor'})
     use({'p00f/nvim-ts-rainbow'})
-    use({'github/copilot.vim'})
+    -- use({'github/copilot.vim'})
     use({'mg979/vim-visual-multi', branch = 'master'})
     use({'troydm/zoomwintab.vim'})
     use({'dstein64/nvim-scrollview'})
