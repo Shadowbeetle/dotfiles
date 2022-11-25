@@ -1,4 +1,4 @@
-#############################################################################
+
 # this zshrc is intended for linux use
 #
 # Because we don't want to commit our secrets to VCS, create
@@ -146,6 +146,15 @@ fi
 # > sudo chmod +x /usr/bin/tmuxinator.zsh
 
 ### DEVELOPMENT
+## ASDF
+#
+
+. $HOME/.asdf/asdf.sh
+# append completions to fpath
+fpath=(${ASDF_DIR}/completions $fpath)
+# initialise completions with ZSH's compinit
+autoload -Uz compinit && compinit
+
 ## NODE.JS
 
 # overwrite builtin directory movements to use nvm
@@ -172,6 +181,7 @@ export PATH="$DENO_INSTALL/bin:$PATH"
 
 ## Elixir
 export PATH=~/.mix/escripts:$PATH
+
 
 ## GO
 export PATH=$PATH:/usr/local/go/bin
