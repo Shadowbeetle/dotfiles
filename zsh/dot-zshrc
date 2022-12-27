@@ -83,6 +83,13 @@ else
   echo
 fi
 
+
+if [ $commands[lsd] ]; then
+  alias ls='lsd'
+else 
+  echo "install lsd https://github.com/Peltoche/lsd"
+fi
+
 # command line file manager
 # 
 # install ranger
@@ -216,6 +223,11 @@ fi
 ## Generic
 
 export PATH=~/.local/bin:$PATH
+
+## Fly.io
+
+export FLYCTL_INSTALL="$HOME/.fly"
+export PATH="$FLYCTL_INSTALL/bin:$PATH"
 
 ## KUBERNETES
 
