@@ -86,6 +86,7 @@ fi
 
 if [ $commands[lsd] ]; then
   alias ls='lsd'
+  alias lt='lsd --tree'
 else 
   echo "install lsd https://github.com/Peltoche/lsd"
 fi
