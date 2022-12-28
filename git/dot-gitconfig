@@ -3,7 +3,7 @@
 	name = Shadowbeetle
 
 [core]
-	excludesfile = /home/nazgul/.gitignore-global
+	excludesfile = ~/.gitignore-global
 	autocrlf = input
   pager = delta
 
