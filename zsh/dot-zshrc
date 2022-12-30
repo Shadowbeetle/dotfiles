@@ -30,7 +30,6 @@ zinit light lukechilds/zsh-nvm
 zinit ice from"gh-r" as"program" mv"docker* -> docker-compose" bpick"*linux*"
 zinit load docker/compose
 
-zinit snippet OMZP::common-aliases
 zinit snippet OMZP::git
 zinit snippet OMZL::history.zsh
 # zinit snippet OMZP::tmux
@@ -349,3 +348,6 @@ export NVM_DIR="$HOME/.nvm"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+
+# Last zsh plugin. Screwed up nvm.
+zinit snippet OMZP::common-aliases
