@@ -53,3 +53,5 @@
 
 [init]
 	defaultBranch = main
+[github]
+	user = Shadowbeetle
