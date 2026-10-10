@@ -403,3 +403,7 @@ _cli_zsh_autocomplete() {
 }
 
 compdef _cli_zsh_autocomplete influx
+
+# peon-ping quick controls
+alias peon="bash /home/nazgul/.claude/hooks/peon-ping/peon.sh"
+[ -f /home/nazgul/.claude/hooks/peon-ping/completions.bash ] && source /home/nazgul/.claude/hooks/peon-ping/completions.bash

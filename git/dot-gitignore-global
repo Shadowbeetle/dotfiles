@@ -3,3 +3,4 @@
 .env
 launch.json
 *.un~
+.claude/settings.local.json
