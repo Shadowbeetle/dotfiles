@@ -234,7 +234,7 @@ if [ -f $HOME/.rvm/scripts/rvm ]; then
 fi
 
 export PATH="$HOME/.rbenv/bin:$PATH"
-if hash -v rbenv > /dev/null; then
+if (( $+commands[rbenv] )); then
   eval "$(rbenv init -)"
 fi
 
