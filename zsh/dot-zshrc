@@ -24,6 +24,15 @@ zinit light starship/starship
 zinit for \
     light-mode  zdharma-continuum/history-search-multi-word
 
+export NVM_DIR="$HOME/.nvm"
+# put the default node on PATH without loading nvm, so node and its global
+# binaries are available right away (nvm itself is lazy loaded below)
+() {
+  [[ -r $NVM_DIR/alias/default ]] || return
+  local default_alias=$(<$NVM_DIR/alias/default)
+  local -a node_dirs=($NVM_DIR/versions/node/v${default_alias#v}(|.*)(Nn/))
+  (( $#node_dirs )) && path=($node_dirs[-1]/bin $path)
+}
 export NVM_LAZY_LOAD=true
 zinit light lukechilds/zsh-nvm
 
@@ -160,7 +169,11 @@ fi
 # append completions to fpath
 fpath=(${ASDF_DIR}/completions $fpath)
 # initialise completions with ZSH's compinit
-autoload -Uz compinit && compinit
+# reuse the cached dump, only do the full (slow) check once a day
+autoload -Uz compinit
+_fresh_dump=(${ZDOTDIR:-$HOME}/.zcompdump(N.mh-24))
+if (( $#_fresh_dump )); then compinit -C; else compinit; fi
+unset _fresh_dump
 
 ## NODE.JS
 
@@ -351,8 +364,6 @@ zinit light-mode for \
 
 ### End of Zinit's installer chunk
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
